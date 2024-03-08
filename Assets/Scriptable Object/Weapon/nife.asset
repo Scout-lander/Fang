@@ -50,8 +50,8 @@ MonoBehaviour:
     number: 3
     piercing: 1
     maxInstances: 70
-    burnChance: 0
-    minBurnDamage: 0
+    burnChance: 1
+    minBurnDamage: 5
     maxBurnDamage: 0
     burnDuration: 0
     burnTickRate: 0
