@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a0dadbc11af6e498d96862cc661191, type: 3}
+  m_Name: MithicKnife
+  m_EditorClassIdentifier: 
+  icon: {fileID: 986835919, guid: 22397abb70399b44785c019e709f194b, type: 3}
+  maxLevel: 8
+  evolutionData: []
+  behaviour: ProjectileWeapon
+  baseStats:
+    name: Mithic Knife
+    description: Mithic Knife
+    projectilePrefab: {fileID: 1478626324491764809, guid: e6a79d863d372b54ca7d3c4f95b0bacb, type: 3}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0.1
+      y: 0.2
+      width: 0
+      height: 0
+    lifespan: 3
+    damage: 50
+    damageVariance: 5
+    area: 0
+    speed: 10
+    cooldown: 1
+    projectileInterval: 0.1
+    knockback: 0
+    number: 3
+    piercing: 2
+    maxInstances: 70
+  linearGrowth: []
+  randomGrowth: []

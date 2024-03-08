@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461d51eac6048c747b316c56effd364d, type: 3}
+  m_Name: Wings
+  m_EditorClassIdentifier: 
+  icon: {fileID: 809160086, guid: 6edb7bd99a6a1b241a6941da60f0e792, type: 3}
+  maxLevel: 8
+  baseStats:
+    name: Speed Mushroom
+    description: Incress Move Speed
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0.1
+      might: 0
+      speed: 0
+      magnet: 0
+  growth:
+  - name: Level 2
+    description: Incease Move Speed +10%
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0.1
+      might: 0
+      speed: 0
+      magnet: 0
+  - name: Level 3
+    description: Incease Move Speed +10%
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0.1
+      might: 0
+      speed: 0
+      magnet: 0
+  - name: Level 4
+    description: Incease Move Speed +10%
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0.1
+      might: 0
+      speed: 0
+      magnet: 0
+  - name: Level 5
+    description: Incease Move Speed +10%
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0.1
+      might: 0
+      speed: 0
+      magnet: 0
+  - name: Level 6
+    description: Incease Move Speed +10%
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0.1
+      might: 0
+      speed: 0
+      magnet: 0
+  - name: Level 7
+    description: Incease Move Speed +10%
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0.1
+      might: 0
+      speed: 0
+      magnet: 0
+  - name: Level 8
+    description: Incease Move Speed +10%
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      moveSpeed: 0.1
+      might: 0
+      speed: 0
+      magnet: 0

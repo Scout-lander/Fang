@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a0dadbc11af6e498d96862cc661191, type: 3}
+  m_Name: Fire Ball
+  m_EditorClassIdentifier: 
+  icon: {fileID: 330601621, guid: 22397abb70399b44785c019e709f194b, type: 3}
+  maxLevel: 0
+  evolutionData: []
+  behaviour: TrackableWeapon
+  baseStats:
+    name: FireBall
+    description: Shhots a Tracking Fire Ball
+    projectilePrefab: {fileID: 7330714531336739364, guid: feaeea219d8bc5742ae0c1c4d022f4e2, type: 3}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0.5
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 3
+    damage: 10
+    damageVariance: 5
+    area: 0.1
+    speed: 3
+    cooldown: 2
+    projectileInterval: 1
+    knockback: 1
+    number: 1
+    piercing: 1
+    maxInstances: 30
+  linearGrowth: []
+  randomGrowth: []

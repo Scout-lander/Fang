@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb1f780e4600cf4785196cafbe6979c, type: 3}
+  m_Name: SpinachPassiveItem Level 2
+  m_EditorClassIdentifier: 
+  multiplier: 35
+  level: 2
+  nextLevelPrefab: {fileID: 0}
+  name: Spinach Level 2
+  description: Increase Might by 35%
+  icon: {fileID: 195617608, guid: 22397abb70399b44785c019e709f194b, type: 3}
