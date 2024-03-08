@@ -14,15 +14,50 @@ public abstract class Weapon : Item
         public string name, description;
 
         [Header("Visuals")]
-        public Projectile projectilePrefab; // If attached, a projectile will spawn every time the weapon cools down.
-        public Aura auraPrefab; // If attached, an aura will spawn when weapon is equipped.
+        public Projectile projectilePrefab;
+        public GameObject burnPrefab; // Prefab for the burn effect.
+        public Aura auraPrefab;
         public ParticleSystem hitEffect;
         public Rect spawnVariance;
 
         [Header("Values")]
-        public float lifespan; // If 0, it will last forever.
+        public float lifespan;
         public float damage, damageVariance, area, speed, cooldown, projectileInterval, knockback;
         public int number, piercing, maxInstances;
+
+        [Header("Burn Damage")]
+        [Tooltip("Chance to apply burn damage upon hitting a target.")]
+        [Range(0f, 1f)]
+        public float burnChance; // The chance to deal burn damage.
+
+        [Tooltip("Minimum amount of burn damage per tick.")]
+        public float minBurnDamage; // The minimum amount of burn damage per tick.
+
+        [Tooltip("Maximum amount of burn damage per tick.")]
+        public float maxBurnDamage; // The maximum amount of burn damage per tick.
+
+        [Tooltip("Duration of the burn damage in seconds.")]
+        public float burnDuration; // The duration of the burn damage.
+
+        [Tooltip("Rate at which burn damage is applied per second.")]
+        public float burnTickRate; // The rate at which burn damage is applied.
+
+        [Tooltip("Delay before the burn damage starts.")]
+        public float burnDelay; // Delay before burn damage starts.
+
+        [Header("Critical Hit")]
+        [Tooltip("Chance to deal a critical hit (percentage from 0 to 100%).")]
+        [Range(0f, 1f)]
+        public float critChance;
+
+        [Tooltip("Minimum crit damage percentage of base weapon damage.")]
+        [Range(0f, 1f)]
+        public float minCritDamagePercent;
+
+        [Tooltip("Maximum crit damage percentage of base weapon damage.")]
+        [Range(0f, 1f)]
+        public float maxCritDamagePercent;
+        private GameObject burnEffectInstance;
 
         // Allows us to use the + operator to add 2 Stats together.
         // Very important later when we want to increase our weapon stats.
@@ -32,7 +67,6 @@ public abstract class Weapon : Item
             result.name = s2.name ?? s1.name;
             result.description = s2.description ?? s1.description;
             result.projectilePrefab = s2.projectilePrefab ?? s1.projectilePrefab;
-           // result.auraPrefab = s2.auraPrefab ?? s1.auraPrefab;
             result.hitEffect = s2.hitEffect == null ? s1.hitEffect : s2.hitEffect;
             result.spawnVariance = s2.spawnVariance;
             result.lifespan = s1.lifespan + s2.lifespan;
@@ -45,13 +79,67 @@ public abstract class Weapon : Item
             result.piercing = s1.piercing + s2.piercing;
             result.projectileInterval = s1.projectileInterval + s2.projectileInterval;
             result.knockback = s1.knockback + s2.knockback;
-            return result;
-        }
 
+            // Add burn damage related values
+            result.burnChance = s1.burnChance + s2.burnChance;
+            result.minBurnDamage = s1.minBurnDamage + s2.minBurnDamage;
+            result.maxBurnDamage = s1.maxBurnDamage + s2.maxBurnDamage;
+            result.burnDuration = Mathf.Max(s1.burnDuration, s2.burnDuration); // Take the maximum burn duration.
+            result.burnTickRate = Mathf.Min(s1.burnTickRate, s2.burnTickRate); // Take the minimum tick rate.
+        result.burnDelay = Mathf.Max(s1.burnDelay, s2.burnDelay); // Take the maximum delay.
+
+         // Add critical hit related values
+            result.critChance = Mathf.Clamp01(s1.critChance + s2.critChance);
+            result.minCritDamagePercent = Mathf.Clamp01(s1.minCritDamagePercent + s2.minCritDamagePercent);
+            result.maxCritDamagePercent = Mathf.Clamp01(s1.maxCritDamagePercent + s2.maxCritDamagePercent);
+            return result;
+            }
+
+        // Get damage dealt.
         // Get damage dealt.
         public float GetDamage()
         {
-            return damage + Random.Range(0, damageVariance);
+            float totalDamage = damage + Random.Range(0, damageVariance);
+            if (Random.value <= burnChance)
+            {
+                // Apply burn damage over time.
+                totalDamage += CalculateBurnDamage();
+            }
+            if (Random.value <= critChance)
+            {
+                // Apply critical hit damage multiplier.
+                float critMultiplier = Random.Range(minCritDamagePercent, maxCritDamagePercent);
+                totalDamage *= (1 + critMultiplier); // Adjust total damage by crit multiplier.
+            }
+            return totalDamage;
+        }
+
+    // Method to instantiate burn effect prefab on the enemy.
+        public void InstantiateBurnEffect(Transform parent)
+        {
+            if (burnEffectInstance == null)
+            {
+                // Instantiate burn effect prefab and attach it to the parent.
+                burnEffectInstance = GameObject.Instantiate(burnPrefab, parent.position, Quaternion.identity);
+                burnEffectInstance.transform.parent = parent;
+            }
+        }
+
+        // Method to remove burn effect prefab from the enemy.
+        public void RemoveBurnEffect()
+        {
+            if (burnEffectInstance != null)
+            {
+                // Destroy burn effect prefab.
+                GameObject.Destroy(burnEffectInstance);
+                burnEffectInstance = null;
+            }
+        }
+
+        private float CalculateBurnDamage()
+        {
+        // Calculate total burn damage over the duration.
+            return Random.Range(minBurnDamage, maxBurnDamage) * (burnDuration / burnTickRate);
         }
     }
 
