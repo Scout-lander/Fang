@@ -31,13 +31,13 @@ MonoBehaviour:
     lifespan: 0
     damage: 15
     damageVariance: 2
-    area: 1
+    area: 0.5
     speed: 0
     cooldown: 4.5
     projectileInterval: 0.05
     knockback: 1
     number: 2
-    piercing: 3
+    piercing: 2
     maxInstances: 50
   linearGrowth:
   - name: Lighting Level 2

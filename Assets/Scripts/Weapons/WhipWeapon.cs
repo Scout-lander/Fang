@@ -14,7 +14,8 @@ public class WhipWeapon : ProjectileWeapon
         if (!currentStats.projectilePrefab)
         {
             Debug.LogWarning(string.Format("Projectile prefab has not been set for {0}", name));
-            currentCooldown = data.baseStats.cooldown;
+            
+            ActivateCooldown(true);
             return false;
         }
 
@@ -60,7 +61,8 @@ public class WhipWeapon : ProjectileWeapon
 
         // Assign the stats.
         prefab.weapon = this;
-        currentCooldown = data.baseStats.cooldown;
+        
+        ActivateCooldown(true);
         attackCount--;
 
         // Determine where the next projectile should spawn.

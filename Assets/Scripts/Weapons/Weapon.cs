@@ -14,74 +14,15 @@ public abstract class Weapon : Item
         public string name, description;
 
         [Header("Visuals")]
-        public Projectile projectilePrefab;
-        public GameObject burnPrefab; // Prefab for the burn effect.
-        public GameObject icePrefab; // Prefab for the burn effect.
-
-        public Aura auraPrefab;
+        public Projectile projectilePrefab; // If attached, a projectile will spawn every time the weapon cools down.
+        public Aura auraPrefab; // If attached, an aura will spawn when weapon is equipped.
         public ParticleSystem hitEffect;
         public Rect spawnVariance;
 
         [Header("Values")]
-        public float lifespan;
+        public float lifespan; // If 0, it will last forever.
         public float damage, damageVariance, area, speed, cooldown, projectileInterval, knockback;
         public int number, piercing, maxInstances;
-
-        [Header("Burn Damage")]
-        [Tooltip("Chance to apply burn damage upon hitting a target.")]
-        [Range(0f, 1f)]
-        public float burnChance; // The chance to deal burn damage.
-
-        [Tooltip("Minimum amount of burn damage per tick.")]
-        public float minBurnDamage; // The minimum amount of burn damage per tick.
-
-        [Tooltip("Maximum amount of burn damage per tick.")]
-        public float maxBurnDamage; // The maximum amount of burn damage per tick.
-
-        [Tooltip("Duration of the burn damage in seconds.")]
-        public float burnDuration; // The duration of the burn damage.
-
-        [Tooltip("Rate at which burn damage is applied per second.")]
-        public float burnTickRate; // The rate at which burn damage is applied.
-
-        [Tooltip("Delay before the burn damage starts.")]
-        public float burnDelay; // Delay before burn damage starts.
-
-        [Header("Critical Hit")]
-        [Tooltip("Chance to deal a critical hit (percentage from 0 to 100%).")]
-        [Range(0f, 1f)]
-        public float critChance;
-
-        [Tooltip("Minimum crit damage percentage of base weapon damage.")]
-        [Range(0f, 1f)]
-        public float minCritDamagePercent;
-
-        [Tooltip("Maximum crit damage percentage of base weapon damage.")]
-        [Range(0f, 1f)]
-        public float maxCritDamagePercent;
-        private GameObject burnEffectInstance;
-
-        [Header("Ice Effect")]
-        [Tooltip("Chance to apply ice effect upon hitting a target.")]
-        [Range(0f, 1f)]
-        public float iceChance; // The chance to apply ice effect.
-
-        [Tooltip("Minimum slow percentage applied to the enemy's movement speed.")]
-        [Range(0f, 1f)]
-        public float minSlowMoveSpeedPercent; // The minimum slow percentage applied to the enemy's movement speed.
-
-        [Tooltip("Maximum slow percentage applied to the enemy's movement speed.")]
-        [Range(0f, 1f)]
-        public float maxSlowMoveSpeedPercent; // The maximum slow percentage applied to the enemy's movement speed.
-
-        [Tooltip("Duration of the ice effect in seconds.")]
-        public float iceDuration; // The duration of the ice effect.
-
-        [Tooltip("Delay before the ice effect starts.")]
-        public float iceDelay; // Delay before the ice effect starts.
-
-        private GameObject iceEffectInstance;
-
 
         // Allows us to use the + operator to add 2 Stats together.
         // Very important later when we want to increase our weapon stats.
@@ -91,6 +32,7 @@ public abstract class Weapon : Item
             result.name = s2.name ?? s1.name;
             result.description = s2.description ?? s1.description;
             result.projectilePrefab = s2.projectilePrefab ?? s1.projectilePrefab;
+            result.auraPrefab = s2.auraPrefab ?? s1.auraPrefab;
             result.hitEffect = s2.hitEffect == null ? s1.hitEffect : s2.hitEffect;
             result.spawnVariance = s2.spawnVariance;
             result.lifespan = s1.lifespan + s2.lifespan;
@@ -103,102 +45,15 @@ public abstract class Weapon : Item
             result.piercing = s1.piercing + s2.piercing;
             result.projectileInterval = s1.projectileInterval + s2.projectileInterval;
             result.knockback = s1.knockback + s2.knockback;
-
-            // Add burn damage related values
-            result.burnChance = s1.burnChance + s2.burnChance;
-            result.minBurnDamage = s1.minBurnDamage + s2.minBurnDamage;
-            result.maxBurnDamage = s1.maxBurnDamage + s2.maxBurnDamage;
-            result.burnDuration = Mathf.Max(s1.burnDuration, s2.burnDuration); // Take the maximum burn duration.
-            result.burnTickRate = Mathf.Min(s1.burnTickRate, s2.burnTickRate); // Take the minimum tick rate.
-        result.burnDelay = Mathf.Max(s1.burnDelay, s2.burnDelay); // Take the maximum delay.
-
-         // Add critical hit related values
-            result.critChance = Mathf.Clamp01(s1.critChance + s2.critChance);
-            result.minCritDamagePercent = Mathf.Clamp01(s1.minCritDamagePercent + s2.minCritDamagePercent);
-            result.maxCritDamagePercent = Mathf.Clamp01(s1.maxCritDamagePercent + s2.maxCritDamagePercent);
             return result;
-            }
+        }
 
-        // Get damage dealt.
         // Get damage dealt.
         public float GetDamage()
         {
-            float totalDamage = damage + Random.Range(0, damageVariance);
-            if (Random.value <= burnChance)
-            {
-                // Apply burn damage over time.
-                totalDamage += CalculateBurnDamage();
-            }
-            if (Random.value <= critChance)
-            {
-                // Apply critical hit damage multiplier.
-                float critMultiplier = Random.Range(minCritDamagePercent, maxCritDamagePercent);
-                totalDamage *= (1 + critMultiplier); // Adjust total damage by crit multiplier.
-            }
-            return totalDamage;
-        }
-
-        // Get ice effect applied.
-        public float GetIceEffect()
-        {
-        if (Random.value <= iceChance)
-            {
-            return Random.Range(minSlowMoveSpeedPercent, maxSlowMoveSpeedPercent);
-            }
-            return 0f;
-}
-
-    // Method to instantiate burn effect prefab on the enemy.
-        public void InstantiateBurnEffect(Transform parent)
-        {
-            if (burnEffectInstance == null)
-            {
-                // Instantiate burn effect prefab and attach it to the parent.
-                burnEffectInstance = GameObject.Instantiate(burnPrefab, parent.position, Quaternion.identity);
-                burnEffectInstance.transform.parent = parent;
-            }
-        }
-
-        // Method to remove burn effect prefab from the enemy.
-        public void RemoveBurnEffect()
-        {
-            if (burnEffectInstance != null)
-            {
-                // Destroy burn effect prefab.
-                GameObject.Destroy(burnEffectInstance);
-                burnEffectInstance = null;
-            }
-        }
-
-        private float CalculateBurnDamage()
-        {
-        // Calculate total burn damage over the duration.
-            return Random.Range(minBurnDamage, maxBurnDamage) * (burnDuration / burnTickRate);
-        }
-
-         // Method to instantiate ice effect prefab on the enemy.
-        public void InstantiateIceEffect(Transform parent)
-        {
-            if (iceEffectInstance == null)
-            {
-                // Instantiate ice effect prefab and attach it to the parent.
-                iceEffectInstance = GameObject.Instantiate(icePrefab, parent.position, Quaternion.identity);
-                iceEffectInstance.transform.parent = parent;
-            }
-        }
-
-        public void RemoveIceEffect()
-        {
-        if (iceEffectInstance != null)
-            {
-                // Destroy ice effect prefab.
-                GameObject.Destroy(iceEffectInstance);
-                iceEffectInstance = null;
-            }
+            return damage + Random.Range(0, damageVariance);
         }
     }
-
-    
 
     protected Stats currentStats;
 
@@ -211,24 +66,23 @@ public abstract class Weapon : Item
     // For dynamically created weapons, call initialise to set everything up.
     public virtual void Initialise(WeaponData data)
     {
-
         base.Initialise(data);
         this.data = data;
         currentStats = data.baseStats;
         movement = GetComponentInParent<PlayerMovement>();
-        currentCooldown = currentStats.cooldown;
+        ActivateCooldown();
     }
 
     protected virtual void Awake()
     {
         // Assign the stats early, as it will be used by other scripts later on.
-        if(data) currentStats = data.baseStats;
+        if (data) currentStats = data.baseStats;
     }
 
     protected virtual void Start()
     {
         // Don't initialise the weapon if the weapon data is not assigned.
-        if(data)
+        if (data)
         {
             Initialise(data);
         }
@@ -239,11 +93,9 @@ public abstract class Weapon : Item
         currentCooldown -= Time.deltaTime;
         if (currentCooldown <= 0f) //Once the cooldown becomes 0, attack
         {
-            Attack(currentStats.number);
+            Attack(currentStats.number + owner.Stats.amount);
         }
     }
-
-
 
     // Levels up the weapon by 1, and calculates the corresponding stats.
     public override bool DoLevelUp()
@@ -273,8 +125,9 @@ public abstract class Weapon : Item
     // This doesn't do anything. We have to override this at the child class to add a behaviour.
     protected virtual bool Attack(int attackCount = 1)
     {
-        if(CanAttack()) {
-	    currentCooldown += currentStats.cooldown;
+        if (CanAttack())
+        {
+            ActivateCooldown();
             return true;
         }
         return false;
@@ -285,9 +138,34 @@ public abstract class Weapon : Item
     // as well as the character's Might stat.
     public virtual float GetDamage()
     {
-        return currentStats.GetDamage() * owner.CurrentMight;
+        return currentStats.GetDamage() * owner.Stats.might;
+    }
+
+    // Get the area, including modifications from the player's stats.
+    public virtual float GetArea()
+    {
+        return currentStats.area + owner.Stats.area;
     }
 
     // For retrieving the weapon's stats.
     public virtual Stats GetStats() { return currentStats; }
+
+    // Refreshes the cooldown of the weapon.
+    // If <strict> is true, refreshes only when currentCooldown < 0.
+    public virtual bool ActivateCooldown(bool strict = false)
+    {
+        // When <strict> is enabled and the cooldown is not yet finished,
+        // do not refresh the cooldown.
+        if(strict && currentCooldown > 0) return false;
+
+        // Calculate what the cooldown is going to be, factoring in the cooldown
+        // reduction stat in the player character.
+        float actualCooldown = currentStats.cooldown * Owner.Stats.cooldown;
+
+        // Limit the maximum cooldown to the actual cooldown, so we cannot increase
+        // the cooldown above the cooldown stat if we accidentally call this function
+        // multiple times.
+        currentCooldown = Mathf.Min(actualCooldown, currentCooldown + actualCooldown);
+        return true;
+    }
 }

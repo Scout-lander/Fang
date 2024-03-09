@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Boss bat
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  maxHealth: 300
-  damage: 100
+  maxHealth: 100
+  damage: 50

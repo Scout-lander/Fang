@@ -176,9 +176,10 @@ public class PlayerInventory : MonoBehaviour
             // Spawn the weapon GameObject.
             GameObject go = new GameObject(data.baseStats.name + " Controller");
             Weapon spawnedWeapon = (Weapon)go.AddComponent(weaponType);
-            spawnedWeapon.Initialise(data);
+            
             spawnedWeapon.transform.SetParent(transform); //Set the weapon to be a child of the player
             spawnedWeapon.transform.localPosition = Vector2.zero;
+            spawnedWeapon.Initialise(data);
             spawnedWeapon.OnEquip();
 
             // Assign the weapon to the slot.
@@ -350,7 +351,6 @@ public class PlayerInventory : MonoBehaviour
                             // If the weapon is already at the max level, do not allow upgrade.
                             if (chosenWeaponUpgrade.maxLevel <= w.currentLevel)
                             {
-                                
                                 DisableUpgradeUI(upgradeOption);
                                 isLevelUp = true;
                                 break;
@@ -402,7 +402,6 @@ public class PlayerInventory : MonoBehaviour
                             // If the passive is already at the max level, do not allow upgrade.
                             if (chosenPassiveUpgrade.maxLevel <= p.currentLevel)
                             {
-                                
                                 DisableUpgradeUI(upgradeOption);
                                 isLevelUp = true;
                                 break;

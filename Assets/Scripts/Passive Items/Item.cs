@@ -12,6 +12,8 @@ public abstract class Item : MonoBehaviour
     protected PlayerInventory inventory;
     protected PlayerStats owner;
 
+    public PlayerStats Owner { get { return owner; } }
+
     public virtual void Initialise(ItemData data)
     {
         maxLevel = data.maxLevel;
@@ -22,8 +24,8 @@ public abstract class Item : MonoBehaviour
 
         // We have to find a better way to reference the player inventory
         // in future, as this is inefficient.
-        inventory = FindObjectOfType<PlayerInventory>();
-        owner = FindObjectOfType<PlayerStats>();
+        inventory = GetComponentInParent<PlayerInventory>();
+        owner = GetComponentInParent<PlayerStats>();
     }
 
     // Call this function to get all the evolutions that the weapon
@@ -34,7 +36,7 @@ public abstract class Item : MonoBehaviour
 
         // Check each listed evolution and whether it is in
         // the inventory.
-        foreach(ItemData.Evolution e in evolutionData)
+        foreach (ItemData.Evolution e in evolutionData)
         {
             if (CanEvolve(e)) possibleEvolutions.Add(e);
         }
@@ -73,13 +75,13 @@ public abstract class Item : MonoBehaviour
     {
         if (!CanEvolve(evolutionData, levelUpAmount))
             return false;
-        
+
         // Should we consume passives / weapons?
         bool consumePassives = (evolutionData.consumes & ItemData.Evolution.Consumption.passives) > 0;
         bool consumeWeapons = (evolutionData.consumes & ItemData.Evolution.Consumption.weapons) > 0;
-        
+
         // Loop through all the catalysts and check if we should consume them.
-        foreach(ItemData.Evolution.Config c in evolutionData.catalysts)
+        foreach (ItemData.Evolution.Config c in evolutionData.catalysts)
         {
             if (c.itemType is PassiveData && consumePassives) inventory.Remove(c.itemType, true);
             if (c.itemType is WeaponData && consumeWeapons) inventory.Remove(c.itemType, true);
@@ -109,7 +111,7 @@ public abstract class Item : MonoBehaviour
         // if the weapon's evolution condition is levelling up.
         foreach (ItemData.Evolution e in evolutionData)
         {
-            if(e.condition == ItemData.Evolution.Condition.auto)
+            if (e.condition == ItemData.Evolution.Condition.auto)
                 AttemptEvolution(e);
         }
         return true;
