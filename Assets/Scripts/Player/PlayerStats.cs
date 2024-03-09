@@ -319,6 +319,7 @@ public class PlayerStats : MonoBehaviour
             UpdateLevelText();
 
             GameManager.instance.StartLevelUp();
+            SFXManager.instance.PlaySFXPitched(13);
         }
     }
 
@@ -352,6 +353,7 @@ public class PlayerStats : MonoBehaviour
                 Kill();
             }
 
+            SFXManager.instance.PlaySFXPitched(12);
             UpdateHealthBar();
         }
     }
@@ -369,6 +371,7 @@ public class PlayerStats : MonoBehaviour
             GameManager.instance.AssignLevelReachedUI(level);
             GameManager.instance.AssignChosenWeaponsAndPassiveItemsUI(inventory.weaponSlots, inventory.passiveSlots);
             GameManager.instance.GameOver();
+            SFXManager.instance.PlaySFXPitched(3);
         }
     }
 

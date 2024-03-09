@@ -66,5 +66,6 @@ public class Pickup : MonoBehaviour
         if(!target) return;
         target.IncreaseExperience(experience);
         target.RestoreHealth(health);
+        SFXManager.instance.PlaySFXPitched(2);
     }
 }

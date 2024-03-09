@@ -73,7 +73,10 @@ public class EnemyStats : MonoBehaviour
         {
             Kill();
         }
-    }
+
+        SFXManager.instance.PlaySFXPitched(1);
+    } 
+
 
     // This is a Coroutine function that makes the enemy flash when taking damage.
     IEnumerator DamageFlash()
@@ -86,6 +89,7 @@ public class EnemyStats : MonoBehaviour
     public void Kill()
     {
         StartCoroutine(KillFade());
+        SFXManager.instance.PlaySFXPitched(0);
     }
 
     // This is a Coroutine function that fades the enemy away slowly.
