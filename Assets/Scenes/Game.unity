@@ -2710,6 +2710,8 @@ MonoBehaviour:
     might: 0
     speed: 0
     magnet: 0
+    critChance: 0
+    critDamagePercentage: 0
   actualStats:
     maxHealth: 0
     recovery: 0
@@ -2717,6 +2719,8 @@ MonoBehaviour:
     might: 0
     speed: 0
     magnet: 0
+    critChance: 0
+    critDamagePercentage: 0
   damageEffect: {fileID: 465733522049428510, guid: 8e133de9754ef2546b18ae41d79991e4, type: 3}
   experience: 0
   level: 1
@@ -4827,13 +4831,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036686976}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.020426719, w: 0.9997913}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.341}
 --- !u!1 &1047053998
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public abstract class Weapon : Item
         [Header("Visuals")]
         public Projectile projectilePrefab;
         public GameObject burnPrefab; // Prefab for the burn effect.
+        public GameObject icePrefab; // Prefab for the burn effect.
+
         public Aura auraPrefab;
         public ParticleSystem hitEffect;
         public Rect spawnVariance;
@@ -58,6 +60,28 @@ public abstract class Weapon : Item
         [Range(0f, 1f)]
         public float maxCritDamagePercent;
         private GameObject burnEffectInstance;
+
+        [Header("Ice Effect")]
+        [Tooltip("Chance to apply ice effect upon hitting a target.")]
+        [Range(0f, 1f)]
+        public float iceChance; // The chance to apply ice effect.
+
+        [Tooltip("Minimum slow percentage applied to the enemy's movement speed.")]
+        [Range(0f, 1f)]
+        public float minSlowMoveSpeedPercent; // The minimum slow percentage applied to the enemy's movement speed.
+
+        [Tooltip("Maximum slow percentage applied to the enemy's movement speed.")]
+        [Range(0f, 1f)]
+        public float maxSlowMoveSpeedPercent; // The maximum slow percentage applied to the enemy's movement speed.
+
+        [Tooltip("Duration of the ice effect in seconds.")]
+        public float iceDuration; // The duration of the ice effect.
+
+        [Tooltip("Delay before the ice effect starts.")]
+        public float iceDelay; // Delay before the ice effect starts.
+
+        private GameObject iceEffectInstance;
+
 
         // Allows us to use the + operator to add 2 Stats together.
         // Very important later when we want to increase our weapon stats.
@@ -114,6 +138,16 @@ public abstract class Weapon : Item
             return totalDamage;
         }
 
+        // Get ice effect applied.
+        public float GetIceEffect()
+        {
+        if (Random.value <= iceChance)
+            {
+            return Random.Range(minSlowMoveSpeedPercent, maxSlowMoveSpeedPercent);
+            }
+            return 0f;
+}
+
     // Method to instantiate burn effect prefab on the enemy.
         public void InstantiateBurnEffect(Transform parent)
         {
@@ -140,6 +174,27 @@ public abstract class Weapon : Item
         {
         // Calculate total burn damage over the duration.
             return Random.Range(minBurnDamage, maxBurnDamage) * (burnDuration / burnTickRate);
+        }
+
+         // Method to instantiate ice effect prefab on the enemy.
+        public void InstantiateIceEffect(Transform parent)
+        {
+            if (iceEffectInstance == null)
+            {
+                // Instantiate ice effect prefab and attach it to the parent.
+                iceEffectInstance = GameObject.Instantiate(icePrefab, parent.position, Quaternion.identity);
+                iceEffectInstance.transform.parent = parent;
+            }
+        }
+
+        public void RemoveIceEffect()
+        {
+        if (iceEffectInstance != null)
+            {
+                // Destroy ice effect prefab.
+                GameObject.Destroy(iceEffectInstance);
+                iceEffectInstance = null;
+            }
         }
     }
 

@@ -20,8 +20,10 @@ public class CharacterData : ScriptableObject
     {
         public float maxHealth, recovery, moveSpeed;
         public float might, speed, magnet;
+        public float critChance; // Crit chance in percentage
+        public float critDamagePercentage; // Damage percentage on crit
 
-        public Stats(float maxHealth = 1000, float recovery = 0, float moveSpeed = 1f, float might = 1f, float speed = 1f, float magnet = 30f)
+        public Stats(float maxHealth = 1000, float recovery = 0, float moveSpeed = 1f, float might = 1f, float speed = 1f, float magnet = 30f, float critChance = 5f, float critDamagePercentage = 150f)
         {
             this.maxHealth = maxHealth;
             this.recovery = recovery;
@@ -29,6 +31,8 @@ public class CharacterData : ScriptableObject
             this.might = might;
             this.speed = speed;
             this.magnet = magnet;
+            this.critChance = critChance;
+            this.critDamagePercentage = critDamagePercentage;
         }
 
         public static Stats operator +(Stats s1, Stats s2)
@@ -39,6 +43,8 @@ public class CharacterData : ScriptableObject
             s1.might += s2.might;
             s1.speed += s2.speed;
             s1.magnet += s2.magnet;
+            s1.critChance += s2.critChance;
+            s1.critDamagePercentage += s2.critDamagePercentage;
             return s1;
         }
     }

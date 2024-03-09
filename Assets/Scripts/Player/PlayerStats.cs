@@ -14,6 +14,10 @@ public class PlayerStats : MonoBehaviour
 
     float health;
 
+    // New property for critical chance
+    public float CritChance { get; private set; } = 1f; // Default crit chance is 1%
+
+
     #region Current Stats Properties
     public float CurrentHealth
     {
