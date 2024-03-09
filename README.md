@@ -32,3 +32,5 @@ fisrt test game porduced by us just having some fun
 <p align="center">
   <img src="https://github.com/Scout-lander/Fang/blob/main/Assets/Art/BG/Logs%20things/sop-1.png?raw=true" alt="Straight Outa Palmy"/>
 </p>
+
+#<3 CAMLANDER
