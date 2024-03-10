@@ -20,8 +20,6 @@ MonoBehaviour:
     name: Whip
     description: '"Attacks horizontally, passes through enemies."'
     projectilePrefab: {fileID: 385292838266604945, guid: 835a9f25490cc1943ab98f30e822c1cd, type: 3}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -41,26 +39,10 @@ MonoBehaviour:
     number: 1
     piercing: 3
     maxInstances: 30
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowPercent: 0
-    maxSlowPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   linearGrowth:
   - name: Level 2
     description: Fires 1 more projectile.
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -80,25 +62,9 @@ MonoBehaviour:
     number: 1
     piercing: 2
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowPercent: 0
-    maxSlowPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   - name: Level 3
     description: 'Base Damage up by 5. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -118,25 +84,9 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowPercent: 0
-    maxSlowPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   - name: Level 4
     description: Base Area up by 10%. Base Damage up by 5.
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -156,25 +106,9 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowPercent: 0
-    maxSlowPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   - name: Level 5
     description: Base Damage up by 5.
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -194,25 +128,9 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowPercent: 0
-    maxSlowPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   - name: Level 6
     description: 'Base Area up by 10%. Base Damage up by 5. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -232,25 +150,9 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowPercent: 0
-    maxSlowPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   - name: Level 7
     description: 'Base Damage up by 5. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -270,25 +172,9 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowPercent: 0
-    maxSlowPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   - name: Level 8
     description: 'Base Damage up by 5. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -308,18 +194,4 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowPercent: 0
-    maxSlowPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   randomGrowth: []

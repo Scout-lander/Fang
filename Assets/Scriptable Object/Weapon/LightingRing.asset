@@ -19,7 +19,7 @@ MonoBehaviour:
   baseStats:
     name: Lighting
     description: '"Strikes at random enemies." '
-    projectilePrefab: {fileID: 0}
+    projectilePrefab: {fileID: 4276814667679878740, guid: cfe826eda292ea045b61451a93da88d8, type: 3}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 3868282395123838644, guid: cfe826eda292ea045b61451a93da88d8, type: 3}
     spawnVariance:

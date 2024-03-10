@@ -30,20 +30,18 @@ MonoBehaviour:
     name: 'Nife '
     description: '"Fires quickly in the faced direction."'
     projectilePrefab: {fileID: 3525754505121610530, guid: cb7b3fbc51fdb6440a6e62d70069c889, type: 3}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 0.1
       width: 0
       height: 0
     lifespan: 5
     damage: 6.5
     damageVariance: 1.2
-    area: 1
+    area: 0.3
     speed: 10
     cooldown: 1
     projectileInterval: 0.1
@@ -51,26 +49,10 @@ MonoBehaviour:
     number: 1
     piercing: 1
     maxInstances: 70
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 1
-    minSlowMoveSpeedPercent: 1
-    maxSlowMoveSpeedPercent: 1
-    iceDuration: 5
-    iceDelay: 1
   linearGrowth:
   - name: Level 2
     description: Fires 1 more projectile.
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -90,25 +72,9 @@ MonoBehaviour:
     number: 1
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowMoveSpeedPercent: 0
-    maxSlowMoveSpeedPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   - name: Level 3
     description: 'Fires 1 more projectile. Base Damage up by 5. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -128,25 +94,9 @@ MonoBehaviour:
     number: 1
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowMoveSpeedPercent: 0
-    maxSlowMoveSpeedPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   - name: Level 4
     description: Fires 1 more projectile.
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -166,25 +116,9 @@ MonoBehaviour:
     number: 1
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowMoveSpeedPercent: 0
-    maxSlowMoveSpeedPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   - name: Level 5
     description: 'Passes through 1 more enemy. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -204,25 +138,9 @@ MonoBehaviour:
     number: 0
     piercing: 1
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowMoveSpeedPercent: 0
-    maxSlowMoveSpeedPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   - name: Level 6
     description: 'Fires 1 more projectile.[1] '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -242,25 +160,9 @@ MonoBehaviour:
     number: 1
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowMoveSpeedPercent: 0
-    maxSlowMoveSpeedPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   - name: Level 7
     description: 'Fires 1 more projectile. Base Damage up by 5. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -280,25 +182,9 @@ MonoBehaviour:
     number: 1
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowMoveSpeedPercent: 0
-    maxSlowMoveSpeedPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   - name: Level 8
     description: Passes through 1 more enemy.
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -318,18 +204,4 @@ MonoBehaviour:
     number: 0
     piercing: 1
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowMoveSpeedPercent: 0
-    maxSlowMoveSpeedPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   randomGrowth: []

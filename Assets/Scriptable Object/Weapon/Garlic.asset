@@ -20,7 +20,6 @@ MonoBehaviour:
     name: Galic
     description: Damages Nearby Enemies. Reduces Resistance to Knockback
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
     auraPrefab: {fileID: 793540531342858563, guid: 9053691c91b7e0a43bf578cec441cdaa, type: 3}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -40,20 +39,10 @@ MonoBehaviour:
     number: 1
     piercing: 0
     maxInstances: 50
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
   linearGrowth:
   - name: Level 2
     description: 'Base Area up by 40%. Base Damage up by 2. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -73,19 +62,9 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
   - name: Level 3
     description: 'Cooldown reduced by 0.1 seconds. Base Damage up by 1. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -105,19 +84,9 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
   - name: Level 4
     description: 'Base Area up by 20%. Base Damage up by 1. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -137,19 +106,9 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
   - name: Level 5
     description: 'Cooldown reduced by 0.1 seconds. Base Damage up by 2. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -169,19 +128,9 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
   - name: Level 6
     description: 'Base Area up by 20%. Base Damage up by 1. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -201,19 +150,9 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
   - name: Level 7
     description: 'Cooldown reduced by 0.1 seconds. Base Damage up by 1. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -233,19 +172,9 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
   - name: Level 8
     description: 'Base Area up by 20%. Base Damage up by 1. '
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -265,13 +194,4 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
   randomGrowth: []

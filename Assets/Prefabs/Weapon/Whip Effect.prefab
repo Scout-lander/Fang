@@ -4935,12 +4935,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1566698494660331886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dbbc97530d34714798d025635306dad, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e62dd30a124b3f4faec5c53652ba040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
   weapon: {fileID: 0}
-  damageSource: 1
+  damageSource: 0
   hasAutoAim: 0
   rotationSpeed: {x: 0, y: 0, z: 0}
 --- !u!61 &-4200428362404038385

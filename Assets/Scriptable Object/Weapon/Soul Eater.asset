@@ -20,7 +20,6 @@ MonoBehaviour:
     name: Soul Eater
     description: Damages Nearby Enemies
     projectilePrefab: {fileID: 0}
-    burnPrefab: {fileID: 0}
     auraPrefab: {fileID: 1011362517845144675, guid: 7f758c5460939c94e93b777c6c0c0869, type: 3}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -40,14 +39,5 @@ MonoBehaviour:
     number: 1
     piercing: 0
     maxInstances: 50
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
   linearGrowth: []
   randomGrowth: []

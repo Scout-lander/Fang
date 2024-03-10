@@ -5143,9 +5143,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05919bad1dca09044a815c6807f4adf8, type: 2}
   - {fileID: 11400000, guid: 1f4c35bbdd247bf4ba649d8197db7f70, type: 2}
   availablePassives:
-  - {fileID: 11400000, guid: 92ca4bc9d645b61438ed1b46e7708014, type: 2}
-  - {fileID: 11400000, guid: 65338d3f8a24fb349a62a25ad5e41834, type: 2}
-  - {fileID: 11400000, guid: f52bb2fbf87bdda4cacf48883615cd3f, type: 2}
+  - {fileID: 11400000, guid: 7319e0552e51e7643973f8cdb55728ed, type: 2}
   upgradeUIOptions:
   - upgradeNameDisplay: {fileID: 1287168762}
     upgradeDescriptionDisplay: {fileID: 1820185635}
