@@ -19,7 +19,7 @@ MonoBehaviour:
     name: Big Heart
     description: Augment max health by 20%
     boosts:
-      maxHealth: 0.2
+      maxHealth: 2
       recovery: 0
       armor: 0
       moveSpeed: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
   - name: Big Heart Level 2
     description: Augment max health by 20%
     boosts:
-      maxHealth: 0.2
+      maxHealth: 2
       recovery: 0
       armor: 0
       moveSpeed: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
   - name: Big Heart Level 3
     description: Augment max health by 20%
     boosts:
-      maxHealth: 0.2
+      maxHealth: 2
       recovery: 0
       armor: 0
       moveSpeed: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
   - name: Big HeartLevel 4
     description: Augment max health by 20%
     boosts:
-      maxHealth: 0.2
+      maxHealth: 2
       recovery: 0
       armor: 0
       moveSpeed: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   - name: Big Heart Level 5
     description: Augment max health by 20%
     boosts:
-      maxHealth: 0.2
+      maxHealth: 2
       recovery: 0
       armor: 0
       moveSpeed: 0
