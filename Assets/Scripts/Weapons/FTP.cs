@@ -9,7 +9,8 @@ public class FTP : MonoBehaviour
     {
         
     }
-
+asdasd
+asdasdased
     // Update is called once per frame
     void Update()
     {
