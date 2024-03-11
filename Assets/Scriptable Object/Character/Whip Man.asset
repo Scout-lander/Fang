@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Whip Me
   startingWeapon: {fileID: 11400000, guid: 8da9e94f7b4b05d4ab48183737678534, type: 2}
   stats:
-    maxHealth: 100
+    maxHealth: 101
     recovery: 0
     armor: 0
     moveSpeed: 1
