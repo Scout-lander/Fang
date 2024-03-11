@@ -14,17 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 925859825, guid: 22397abb70399b44785c019e709f194b, type: 3}
   maxLevel: 8
-  evolutionData:
-  - name: 
-    condition: 1
-    consumes: 2
-    evolutionLevel: 8
-    catalysts:
-    - itemType: {fileID: 11400000, guid: 1f4c35bbdd247bf4ba649d8197db7f70, type: 2}
-      level: 8
-    outcome:
-      itemType: {fileID: 11400000, guid: 785dca490c7fc524fa3c74c792ceade4, type: 2}
-      level: 1
+  evolutionData: []
   behaviour: ProjectileWeapon
   baseStats:
     name: 'Nife '

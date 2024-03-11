@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ac5829bd5e3e84abe673caa267cea6, type: 3}
   m_Name: Lighting Man
   m_EditorClassIdentifier: 
-  icon: {fileID: 934247739, guid: 8d378c5cf1aaba54283392e927f5e7ca, type: 3}
+  icon: {fileID: 1278775345, guid: 19ff615c2699edb4a83c79fea56e75b3, type: 3}
   name: Lighting Man
   startingWeapon: {fileID: 11400000, guid: 05919bad1dca09044a815c6807f4adf8, type: 2}
   stats:
@@ -30,5 +30,5 @@ MonoBehaviour:
     growth: 1
     greed: 1
     curse: 1
-    magnet: 30
+    magnet: 7
     revival: 0

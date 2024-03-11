@@ -20,8 +20,6 @@ MonoBehaviour:
     name: Book
     description: 
     projectilePrefab: {fileID: 5495197015205069727, guid: ad92675777c4d4947b30867be78f4329, type: 3}
-    burnPrefab: {fileID: 0}
-    icePrefab: {fileID: 0}
     auraPrefab: {fileID: 430078301813753508, guid: e8e56514a13dc5b4b89a0b8711bd6d60, type: 3}
     hitEffect: {fileID: 0}
     spawnVariance:
@@ -41,19 +39,5 @@ MonoBehaviour:
     number: 3
     piercing: 10
     maxInstances: 10
-    burnChance: 0
-    minBurnDamage: 0
-    maxBurnDamage: 0
-    burnDuration: 0
-    burnTickRate: 0
-    burnDelay: 0
-    critChance: 0
-    minCritDamagePercent: 0
-    maxCritDamagePercent: 0
-    iceChance: 0
-    minSlowMoveSpeedPercent: 0
-    maxSlowMoveSpeedPercent: 0
-    iceDuration: 0
-    iceDelay: 0
   linearGrowth: []
   randomGrowth: []

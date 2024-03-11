@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ac5829bd5e3e84abe673caa267cea6, type: 3}
   m_Name: Book
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1846464048, guid: cccfc8e061ae58841927b4449be27b89, type: 3}
   name: 
   startingWeapon: {fileID: 11400000, guid: 093c28464358d114da6620d7d5f94c05, type: 2}
   stats:
@@ -30,5 +30,5 @@ MonoBehaviour:
     growth: 1
     greed: 1
     curse: 1
-    magnet: 30
+    magnet: 7
     revival: 0
