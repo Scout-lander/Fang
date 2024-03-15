@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a0dadbc11af6e498d96862cc661191, type: 3}
+  m_Name: Golden Relic
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: b91a4381b9ece3a47b81fcd53c9b92d0, type: 3}
+  maxLevel: 6
+  evolutionData: []
+  behaviour: BookWeapon
+  baseStats:
+    name: Golden Relic
+    description: Golden Relic Spins Around Player
+    projectilePrefab: {fileID: 5495197015205069727, guid: ad92675777c4d4947b30867be78f4329, type: 3}
+    auraPrefab: {fileID: 430078301813753508, guid: ab3995d9f2837f14d9d95b8607b8fd37, type: 3}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 1
+    damage: 5
+    damageVariance: 1
+    area: 0
+    speed: 0
+    cooldown: 1
+    projectileInterval: 1
+    knockback: 1
+    number: 3
+    piercing: 10
+    maxInstances: 10
+  linearGrowth:
+  - name: Golden Relic Level 2
+    description: Damage +3
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 3
+    damageVariance: 0
+    area: 0
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 0
+    piercing: 0
+    maxInstances: 0
+  - name: Golden Relic Level 3
+    description: Golden Relic +1
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 430078301813753508, guid: e8e56514a13dc5b4b89a0b8711bd6d60, type: 3}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 2
+    damageVariance: 0
+    area: 0
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 0
+    piercing: 0
+    maxInstances: 0
+  - name: Golden Relic Level 4
+    description: Area +
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 0
+    damageVariance: 0
+    area: 1
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 0
+    piercing: 0
+    maxInstances: 0
+  - name: Golden Relic Level 5
+    description: Damage +5
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 5
+    damageVariance: 0
+    area: 0
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 0
+    piercing: 0
+    maxInstances: 0
+  - name: Golden Relic Level 6
+    description: +1 Golden Relic
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 430078301813753508, guid: 7d120d64d9714d64fab81c4bcbdac112, type: 3}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 0
+    damageVariance: 0
+    area: 0
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 0
+    piercing: 0
+    maxInstances: 0
+  randomGrowth: []

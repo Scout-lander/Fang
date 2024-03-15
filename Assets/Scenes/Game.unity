@@ -28453,6 +28453,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Treasure Chests
       objectReference: {fileID: 0}
+    - target: {fileID: 3140738142282260304, guid: 6d08390a01e032348822ce29d5cf17a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8166262429908421808, guid: 6d08390a01e032348822ce29d5cf17a9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.37
