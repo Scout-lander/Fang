@@ -7,13 +7,10 @@ using TMPro;
 
 public class DrunkSystem : MonoBehaviour
 {
-    public float maxDrunk = 100;
     public float startingDrunk = 100;
-    public float DrunkRegenRate = 5;
     public Image DrunkBar;
     public float currentDrunk;
     public TMP_Text DrunkText;
-    public float soberRate = 25f;
     public bool IsDrunk;
     public ParticleSystem drunkPartical;
     PlayerStats player;
@@ -38,7 +35,7 @@ public class DrunkSystem : MonoBehaviour
     {
         if(currentDrunk < player.Stats.maxDrunk)
         {
-            currentDrunk += DrunkRegenRate * Time.deltaTime;
+            currentDrunk += player.Stats.drunkAutoRegen * Time.deltaTime;
             currentDrunk = Mathf.Clamp(currentDrunk, 0f, player.Stats.maxDrunk);
             UpdateDrunkUI();
         }
@@ -62,7 +59,7 @@ public class DrunkSystem : MonoBehaviour
         if (IsDrunk)
             Drunk();
 
-        if(Input.GetKeyDown(KeyCode.Z) && currentDrunk > player.Stats.maxDrunk)
+        if(Input.GetKeyDown(KeyCode.Z) && currentDrunk > 99)
         {
             IsDrunk = !IsDrunk;
             drunkPartical.Play();

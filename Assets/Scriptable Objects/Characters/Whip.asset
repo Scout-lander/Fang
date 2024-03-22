@@ -37,4 +37,4 @@ MonoBehaviour:
     dashCooldown: 5
     maxDrunk: 100
     drunkAutoRegen: 5
-    soberRate: 100
+    soberRate: 25
