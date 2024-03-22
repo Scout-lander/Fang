@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d531c6a981a4bbf4a9fbbeb73cb20eca, type: 3}
+  m_Name: Book Of speed
+  m_EditorClassIdentifier: 
+  icon: {fileID: -1145985091, guid: 5666fd68fbba8e941b3724f8e08e10d9, type: 3}
+  maxLevel: 5
+  evolutionData:
+  - name: Soul Eater
+    condition: 1
+    consumes: 2
+    evolutionLevel: 5
+    catalysts:
+    - itemType: {fileID: 11400000, guid: cdb9c796504291948ab0842772349798, type: 2}
+      level: 8
+    outcome:
+      itemType: {fileID: 11400000, guid: 764ecc47696366f44b3cc048fd7f6563, type: 2}
+      level: 1
+  baseStats:
+    name: Book Of speed
+    description: Increases projectile speed by 10%.
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      armor: 0
+      moveSpeed: 0
+      might: 0
+      area: 0
+      speed: 0.1
+      duration: 0
+      amount: 0
+      cooldown: 0
+      luck: 0
+      growth: 0
+      greed: 0
+      curse: 0
+      magnet: 0
+      revival: 0
+      dashSpeed: 0
+      dashDuration: 0
+      dashCooldown: 0
+  growth:
+  - name: Book Of speed Level 2
+    description: Increases projectile speed by 10%.
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      armor: 0
+      moveSpeed: 0
+      might: 0
+      area: 0
+      speed: 0.1
+      duration: 0
+      amount: 0
+      cooldown: 0
+      luck: 0
+      growth: 0
+      greed: 0
+      curse: 0
+      magnet: 0
+      revival: 0
+      dashSpeed: 0
+      dashDuration: 0
+      dashCooldown: 0
+  - name: Book Of speed Level 3
+    description: Increases projectile speed by 10%.
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      armor: 0
+      moveSpeed: 0
+      might: 0
+      area: 0
+      speed: 0.1
+      duration: 0
+      amount: 0
+      cooldown: 0
+      luck: 0
+      growth: 0
+      greed: 0
+      curse: 0
+      magnet: 0
+      revival: 0
+      dashSpeed: 0
+      dashDuration: 0
+      dashCooldown: 0
+  - name: Book Of speed Level 4
+    description: Increases projectile speed by 10%.
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      armor: 0
+      moveSpeed: 0
+      might: 0
+      area: 0
+      speed: 0.1
+      duration: 0
+      amount: 0
+      cooldown: 0
+      luck: 0
+      growth: 0
+      greed: 0
+      curse: 0
+      magnet: 0
+      revival: 0
+      dashSpeed: 0
+      dashDuration: 0
+      dashCooldown: 0
+  - name: Book Of speed Level 5
+    description: Increases projectile speed by 10%.
+    boosts:
+      maxHealth: 0
+      recovery: 0
+      armor: 0
+      moveSpeed: 0
+      might: 0
+      area: 0
+      speed: 0.1
+      duration: 0
+      amount: 0
+      cooldown: 0
+      luck: 0
+      growth: 0
+      greed: 0
+      curse: 0
+      magnet: 0
+      revival: 0
+      dashSpeed: 0
+      dashDuration: 0
+      dashCooldown: 0

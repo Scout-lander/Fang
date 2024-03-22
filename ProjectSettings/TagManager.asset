@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Prop
+  - Enemy
+  - Treasure Chest
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - terain
+  - props
+  - enemy
+  - player
+  - weapons
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: terrain
+    uniqueID: 1904791715
+    locked: 0
+  - name: props
+    uniqueID: 3407418449
+    locked: 0
+  - name: enemy
+    uniqueID: 719182537
+    locked: 0
+  - name: attacks
+    uniqueID: 1755763025
+    locked: 0
+  - name: weapons
+    uniqueID: 425858897
+    locked: 0
+  - name: player
+    uniqueID: 26178773
+    locked: 0
