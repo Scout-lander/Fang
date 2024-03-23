@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     Animator am;
     Rigidbody2D rb;
     PlayerStats player;
+    private float dashSpeed;
 
     void Start()
     {
@@ -34,8 +35,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<UnityEngine.Animation>();
         canDash = true;
         am = GetComponent<Animator>();
-
-
+        dashSpeed = player.Stats.moveSpeed * 20;
     }
 
     void Update()
@@ -119,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
         isDashing = true;
 
 
-        rb.velocity = new Vector2(moveDir.x * player.Stats.dashSpeed, moveDir.y * player.Stats.dashSpeed);
+        rb.velocity = new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed);
         yield return new WaitForSeconds(player.Stats.dashDuration);
         isDashing = false;
         Physics2D.IgnoreLayerCollision(8, 9, false);
