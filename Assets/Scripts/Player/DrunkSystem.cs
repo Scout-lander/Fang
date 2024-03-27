@@ -4,36 +4,42 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-
 public class DrunkSystem : MonoBehaviour
 {
-    public float startingDrunk = 100;
+     public float startingDrunk = 100;
     public Image DrunkBar;
     public float currentDrunk;
     public TMP_Text DrunkText;
     public bool IsDrunk;
-    public ParticleSystem drunkPartical;
+    public float SpeedBuff;
+    public float speedBuffAmount;
+    private PlayerStats playerStats;
+
+    public ParticleSystem drunkParticle;
     PlayerStats player;
 
-    // Start is called before the first frame update
-    void Start()
+    PlayerMovement playerMove;
+    Rigidbody2D rb;
+
+    private void Start()
     {
         currentDrunk = startingDrunk;
         player = GetComponent<PlayerStats>();
+        playerMove = GetComponent<PlayerMovement>();
+        rb = GetComponent<Rigidbody2D>();
+        SpeedBuff = player.Stats.moveSpeed * 500;
         UpdateDrunkUI();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         RegenerateDrunk();
-        CheckForDrunk(); // Call the method here if it's meant to be called in Update
-
+        CheckForDrunk();
     }
 
     private void RegenerateDrunk()
     {
-        if(currentDrunk < player.Stats.maxDrunk)
+        if (currentDrunk < player.Stats.maxDrunk)
         {
             currentDrunk += player.Stats.drunkAutoRegen * Time.deltaTime;
             currentDrunk = Mathf.Clamp(currentDrunk, 0f, player.Stats.maxDrunk);
@@ -41,39 +47,66 @@ public class DrunkSystem : MonoBehaviour
         }
     }
 
-    public void UpdateDrunkUI()
+    private void UpdateDrunkUI()
     {
-        if(DrunkBar != null)
+        if (DrunkBar != null)
         {
             DrunkBar.fillAmount = currentDrunk / player.Stats.maxDrunk;
         }
 
-        if(DrunkText != null)
+        if (DrunkText != null)
         {
-            DrunkText.text = (int)currentDrunk + "/" + player.Stats.maxDrunk;
+            DrunkText.text = ((int)currentDrunk) + "/" + player.Stats.maxDrunk;
         }
     }
 
-    public void CheckForDrunk()
+    
+
+    private void CheckForDrunk()
     {
         if (IsDrunk)
-            Drunk();
-
-        if(Input.GetKeyDown(KeyCode.Z) && currentDrunk > 99)
         {
-            IsDrunk = !IsDrunk;
-            drunkPartical.Play();
+            Drunk();
         }
 
-        if(IsDrunk && currentDrunk < 1)
-            IsDrunk = false;
-            drunkPartical.Stop();
+        if (Input.GetKeyDown(KeyCode.Z) && currentDrunk > 99)
+        {
+            ToggleDrunkState();
+        }
 
+        if (IsDrunk && currentDrunk < 1)
+        {
+            ToggleDrunkState();
+        }
     }
-    public void Drunk()
+
+    private void ToggleDrunkState()
+    {
+        IsDrunk = !IsDrunk;
+        if (IsDrunk)
+        {
+            drunkParticle.Play();
+            playerMove.ActiveSpeedBuff();
+        }
+        else
+        {
+            drunkParticle.Stop();
+        }
+
+        if (!IsDrunk)
+        {
+        drunkParticle.Stop();
+        playerMove.DeactiveSpeedBuff();
+        }
+    }
+
+    private void Drunk()
     {
         currentDrunk -= player.Stats.soberRate * Time.deltaTime;
-            if (currentDrunk < 0)
-                currentDrunk = 0;
+        if (currentDrunk < 0)
+        {
+            currentDrunk = 0;
+        }
     }
 }
+

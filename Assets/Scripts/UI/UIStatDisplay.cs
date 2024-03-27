@@ -7,6 +7,7 @@ public class UIStatDisplay : MonoBehaviour
 {
 
     public PlayerStats player; // The player that this stat display is rendering stats for.
+    public bool displayCurrentHealth = false;
     public bool updateInEditor = false;
     TextMeshProUGUI statNames, statValues;
 
@@ -33,6 +34,14 @@ public class UIStatDisplay : MonoBehaviour
         // Use StringBuilders so that the string manipulation runs faster.
         StringBuilder names = new StringBuilder();
         StringBuilder values = new StringBuilder();
+
+        // Add the current health to the stat box.
+        if(displayCurrentHealth)
+        {
+            names.AppendLine("Health");
+            values.AppendLine(player.CurrentHealth.ToString());
+        }
+
         FieldInfo[] fields = typeof(CharacterData.Stats).GetFields(BindingFlags.Public | BindingFlags.Instance);
         foreach (FieldInfo field in fields)
         {

@@ -30,11 +30,10 @@ MonoBehaviour:
     growth: 1
     greed: 1
     curse: 1
+    dashDuration: 0.251
     magnet: 2
-    revival: 0
-    dashSpeed: 20
-    dashDuration: 0.25
-    dashCooldown: 5
+    revival: 1
+    dashCooldown: 0.1
     maxDrunk: 100
     drunkAutoRegen: 5
     soberRate: 25

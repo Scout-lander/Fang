@@ -932,7 +932,6 @@ GameObject:
   - component: {fileID: 203881240}
   - component: {fileID: 203881239}
   - component: {fileID: 203881241}
-  - component: {fileID: 203881247}
   - component: {fileID: 203881242}
   - component: {fileID: 203881243}
   - component: {fileID: 203881245}
@@ -1153,7 +1152,7 @@ MonoBehaviour:
     maxHealth: 0
     recovery: 0
     armor: 0
-    moveSpeed: 0
+    moveSpeed: 1
     might: 0
     area: 0
     speed: 0
@@ -1164,10 +1163,9 @@ MonoBehaviour:
     growth: 0
     greed: 0
     curse: 0
+    dashDuration: 0
     magnet: 0
     revival: 0
-    dashSpeed: 0
-    dashDuration: 0
     dashCooldown: 0
     maxDrunk: 0
     drunkAutoRegen: 0
@@ -1187,10 +1185,9 @@ MonoBehaviour:
     growth: 0
     greed: 0
     curse: 0
+    dashDuration: 0
     magnet: 0
     revival: 0
-    dashSpeed: 0
-    dashDuration: 0
     dashCooldown: 0
     maxDrunk: 0
     drunkAutoRegen: 0
@@ -1306,19 +1303,9 @@ MonoBehaviour:
   currentDrunk: 0
   DrunkText: {fileID: 1354656061}
   IsDrunk: 0
-  drunkPartical: {fileID: 379476538}
---- !u!114 &203881247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203881235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f2f13de482f7b341b3ac3628f1fe2b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  SpeedBuff: 3
+  speedBuffAmount: 3
+  drunkParticle: {fileID: 379476538}
 --- !u!1 &208246131
 GameObject:
   m_ObjectHideFlags: 0

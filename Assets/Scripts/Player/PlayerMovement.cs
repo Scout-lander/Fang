@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     PlayerStats player;
     private float dashSpeed;
+    private float SBuff;
 
     void Start()
     {
@@ -36,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
         am = GetComponent<Animator>();
         dashSpeed = player.Stats.moveSpeed * 20;
+        SBuff = player.Stats.moveSpeed * 20;
+        
     }
 
     void Update()
@@ -65,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash());
             am.Play("Wizzard_dash");
         }
+        
 
         float moveX, moveY;
         {
@@ -128,5 +132,15 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(player.Stats.dashCooldown);
         canDash = true;
+    }
+
+    public void ActiveSpeedBuff()
+    {
+        rb.velocity = new Vector2(moveDir.x * player.Stats.moveSpeed * SBuff, moveDir.y * player.Stats.moveSpeed * SBuff);
+    }
+
+    public void DeactiveSpeedBuff()
+    {
+        rb.velocity = new Vector2(moveDir.x * player.Stats.moveSpeed / SBuff, moveDir.y * player.Stats.moveSpeed / SBuff);
     }
 }

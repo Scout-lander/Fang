@@ -24,9 +24,10 @@ public class CharacterData : ScriptableObject
         [Range(-1, 10)] public int amount;
         [Range(-1, 1)] public float cooldown;
         [Min(-1)] public float luck, growth, greed, curse;
+        [Range(0.1f, 0.5f)] public float dashDuration;
         public float magnet;
         public int revival;
-        public float dashDuration, dashCooldown; //Dash can be found in Movement
+        public float dashCooldown; //Dash can be found in Movement
         public float maxDrunk, drunkAutoRegen, soberRate;
 
         public static Stats operator +(Stats s1, Stats s2)
@@ -59,7 +60,7 @@ public class CharacterData : ScriptableObject
         maxHealth = 100, moveSpeed = 1, might = 1, amount = 0,
         area = 1, speed = 1, duration = 1, cooldown = 1,
         luck = 1, greed = 1, growth = 1, curse = 1,
-        dashDuration = 1, dashCooldown = 5,
+        dashDuration = .25f, dashCooldown = 5,
         soberRate = 25, drunkAutoRegen = 5, maxDrunk = 100
     };
 }
