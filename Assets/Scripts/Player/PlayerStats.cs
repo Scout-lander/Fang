@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
+
 
 public class PlayerStats : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class PlayerStats : MonoBehaviour
     CharacterData characterData;
     public CharacterData.Stats baseStats;
     Animator am;
-
+    public List<Buff> buffs = new List<Buff>(); // aka the buff list.
     [SerializeField] CharacterData.Stats actualStats;
 
     public CharacterData.Stats Stats
@@ -117,6 +119,17 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
+
+        // Counts down duration of buffs.
+        List<Buff> expiredBuffs = new List<Buff>();
+        foreach(Buff b in buffs)
+        {
+        }
+
+        // Create a new list excluding expired buffs.
+        if(expiredBuffs.Count > 0)
+            buffs = buffs.Except(expiredBuffs).ToList();
+
         if (invincibilityTimer > 0)
         {
             invincibilityTimer -= Time.deltaTime;
@@ -130,20 +143,61 @@ public class PlayerStats : MonoBehaviour
         Recover();
     }
 
+    public BuffData buffData; // Reference to the BuffData scriptable object
+
+    public Buff AddBuff(BuffData buffData)
+{
+    // Create a new Buff object and assign its data
+    Buff buff = new Buff();
+    buff.data = buffData;
+
+    // Add the buff to the list
+    buffs.Add(buff);
+    
+    // Recalculate stats after adding the buff
+    RecalculateStats();
+
+    return buff;
+}
+        
+        // Removes all copies of a certain type of buff.
+    public void RemoveBuff(BuffData data)
+    {
+        List<Buff> toRemove = new List<Buff>();
+        foreach(Buff b in buffs)
+        {
+            if(b.data == data) // Check if the BuffData matches
+                toRemove.Add(b);
+        }
+
+        // Remove the matching buffs
+        foreach(Buff b in toRemove)
+        {
+            buffs.Remove(b);
+        }
+
+        // Recalculate stats after removing the buffs
+        RecalculateStats();
+    }
+
+    // Remember that you also need to get RecalculateStats() to add buffs to your stats.
+    // This is equally important as calling RecalculateStats() above.
     public void RecalculateStats()
     {
         actualStats = baseStats;
-        foreach (PlayerInventory.Slot s in inventory.passiveSlots)
+        foreach(PlayerInventory.Slot s in inventory.passiveSlots)
         {
             Passive p = s.item as Passive;
-            if (p)
+            if(p)
             {
                 actualStats += p.GetBoosts();
             }
         }
 
-        // Update the PlayerCollector's radius.
-        collector.SetRadius(actualStats.magnet);
+        foreach(Buff b in buffs)
+        {
+            actualStats += b.data.modifier;
+        }
     }
 
     public void IncreaseExperience(int amount)

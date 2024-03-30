@@ -19,6 +19,8 @@ MonoBehaviour:
   baseStats:
     name: Golden Ralic(Aura)
     description: Spins around player doing damage
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 2433501168457411927, guid: bdcd817a0809f83459b4155adb912785, type: 3}
     hitEffect: {fileID: 0}
@@ -42,6 +44,8 @@ MonoBehaviour:
   linearGrowth:
   - name: Golden Ralic (Aura) Level 2
     description: Adds one
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 2433501168457411927, guid: fc6ed681fb502794e99eb5638fc89e0c, type: 3}
     hitEffect: {fileID: 0}
@@ -64,6 +68,8 @@ MonoBehaviour:
     maxInstances: 0
   - name: Golden Ralic (Aura) Level 3
     description: Adds one
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 2433501168457411927, guid: a90c867ed1f72aa47940ffc0700dee00, type: 3}
     hitEffect: {fileID: 0}
@@ -86,6 +92,8 @@ MonoBehaviour:
     maxInstances: 0
   - name: Golden Ralic (Aura) Level 3
     description: Adds one
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 2433501168457411927, guid: 82acc5144d9fb974a8f4d3d513db56c0, type: 3}
     hitEffect: {fileID: 0}
@@ -106,4 +114,56 @@ MonoBehaviour:
     number: 0
     piercing: 0
     maxInstances: 0
-  randomGrowth: []
+  randomGrowth:
+  - rarity: 3
+    stats:
+      name: 
+      description: 
+      nameColor: {r: 0, g: 0, b: 0, a: 0}
+      descriptionColor: {r: 0, g: 0, b: 0, a: 0}
+      projectilePrefab: {fileID: 0}
+      auraPrefab: {fileID: 0}
+      hitEffect: {fileID: 0}
+      spawnVariance:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      lifespan: 0
+      damage: 0
+      damageVariance: 0
+      area: 0
+      speed: 0
+      cooldown: 0
+      projectileInterval: 0
+      knockback: 0
+      number: 0
+      piercing: 0
+      maxInstances: 0
+    percentageChanceOfRarity: 75
+  currentWeapon:
+    name: 
+    description: 
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 0
+    damageVariance: 0
+    area: 0
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 0
+    piercing: 0
+    maxInstances: 0

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Character Data", menuName = "2D Top-down Rogue-like/Character Data")]
+[CreateAssetMenu(fileName = "Character Data", menuName = "Camlander/Character Data")]
 public class CharacterData : ScriptableObject
 {
     [SerializeField]

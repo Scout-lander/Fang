@@ -19,6 +19,8 @@ MonoBehaviour:
   baseStats:
     name: Fire Wand
     description: Fires at a random enemy, deals heavy damage.
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 8272151355606925140, guid: 88512cf90507b9545bfdf3439243adae, type: 3}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -42,6 +44,8 @@ MonoBehaviour:
   linearGrowth:
   - name: Level 2
     description: Base Damage up by 10.
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -64,6 +68,8 @@ MonoBehaviour:
     maxInstances: 0
   - name: Level 3
     description: Base Damage up by 10. Base Speed up by 20%.
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -86,6 +92,8 @@ MonoBehaviour:
     maxInstances: 0
   - name: Level 4
     description: Base Damage up by 10.
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -108,6 +116,8 @@ MonoBehaviour:
     maxInstances: 0
   - name: Level 5
     description: Base Damage up by 10. Base Speed up by 20%.
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -130,6 +140,8 @@ MonoBehaviour:
     maxInstances: 0
   - name: Level 6
     description: Base Damage up by 10.
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -152,6 +164,8 @@ MonoBehaviour:
     maxInstances: 0
   - name: Level 7
     description: Base Damage up by 10. Base Speed up by 20%.
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -174,6 +188,8 @@ MonoBehaviour:
     maxInstances: 0
   - name: Level 8
     description: Base Damage up by 10.
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -195,3 +211,28 @@ MonoBehaviour:
     piercing: 0
     maxInstances: 0
   randomGrowth: []
+  currentWeapon:
+    name: 
+    description: 
+    nameColor: {r: 0, g: 0, b: 0, a: 0}
+    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
+    projectilePrefab: {fileID: 0}
+    auraPrefab: {fileID: 0}
+    hitEffect: {fileID: 0}
+    spawnVariance:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    lifespan: 0
+    damage: 0
+    damageVariance: 0
+    area: 0
+    speed: 0
+    cooldown: 0
+    projectileInterval: 0
+    knockback: 0
+    number: 0
+    piercing: 0
+    maxInstances: 0

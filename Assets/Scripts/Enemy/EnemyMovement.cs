@@ -30,6 +30,19 @@ public class EnemyMovement : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemy.currentMoveSpeed * Time.deltaTime); 
         }
     }
+    // Method to retrieve player position
+    public Vector3 RetrievePlayerPosition()
+    {
+        if (player != null)
+        {
+            return player.position;
+        }
+        else
+        {
+            // If player is not found, return Vector3.zero
+            return Vector3.zero;
+        }
+    }
 
     // This is meant to be called from other scripts to create knockback.
     public void Knockback(Vector2 velocity, float duration)

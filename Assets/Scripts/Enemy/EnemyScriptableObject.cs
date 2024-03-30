@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "EnemyScriptableObject", menuName = "ScriptableObjects/Enemy")]
+[CreateAssetMenu(fileName = "EnemyScriptableObject", menuName = "Enemy/CollissionEnemy")]
 public class EnemyScriptableObject : ScriptableObject
 {
     //Base stats for the enemy

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62da1e7ea2535cc4797107be537dd4bb, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  icon: {fileID: 6389604641927212888, guid: 9a4fc81d095024a48880d86a3c54f2b7, type: 3}
+  icon: {fileID: 21300000, guid: fdc18fb1b689f94468af85c7e1fb18e7, type: 3}
   maxLevel: 8
   evolutionData: []
   behaviour: AxeWeapon

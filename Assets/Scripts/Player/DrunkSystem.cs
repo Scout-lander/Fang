@@ -6,28 +6,19 @@ using TMPro;
 
 public class DrunkSystem : MonoBehaviour
 {
-     public float startingDrunk = 100;
+    public float startingDrunk = 100;
     public Image DrunkBar;
     public float currentDrunk;
     public TMP_Text DrunkText;
     public bool IsDrunk;
-    public float SpeedBuff;
-    public float speedBuffAmount;
-    private PlayerStats playerStats;
-
     public ParticleSystem drunkParticle;
     PlayerStats player;
-
-    PlayerMovement playerMove;
-    Rigidbody2D rb;
+    public BuffData drunkBuffData; // Reference to the BuffData scriptable object for drunk buff
 
     private void Start()
     {
         currentDrunk = startingDrunk;
-        player = GetComponent<PlayerStats>();
-        playerMove = GetComponent<PlayerMovement>();
-        rb = GetComponent<Rigidbody2D>();
-        SpeedBuff = player.Stats.moveSpeed * 500;
+        player = GetComponent<PlayerStats>(); // Assuming PlayerStats is attached to the same GameObject
         UpdateDrunkUI();
     }
 
@@ -60,8 +51,6 @@ public class DrunkSystem : MonoBehaviour
         }
     }
 
-    
-
     private void CheckForDrunk()
     {
         if (IsDrunk)
@@ -80,23 +69,28 @@ public class DrunkSystem : MonoBehaviour
         }
     }
 
+    public void DoDrunk()
+    {
+        if (currentDrunk > 99)
+        {
+            ToggleDrunkState();
+        }
+    }
+
     private void ToggleDrunkState()
     {
         IsDrunk = !IsDrunk;
         if (IsDrunk)
         {
             drunkParticle.Play();
-            playerMove.ActiveSpeedBuff();
+            // Add Drunk buff here when drunk state is activated
+            player.AddBuff(drunkBuffData);
         }
         else
         {
             drunkParticle.Stop();
-        }
-
-        if (!IsDrunk)
-        {
-        drunkParticle.Stop();
-        playerMove.DeactiveSpeedBuff();
+            // Remove Drunk buff here when drunk state is deactivated
+            player.RemoveBuff(drunkBuffData);
         }
     }
 
@@ -109,4 +103,3 @@ public class DrunkSystem : MonoBehaviour
         }
     }
 }
-

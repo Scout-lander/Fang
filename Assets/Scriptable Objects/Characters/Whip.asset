@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: -5044664615930318519, guid: d3044741a5868fa4eba95b098108e7b9, type: 3}
   name: Whip
-  startingWeapon: {fileID: 11400000, guid: de23598d9c1c73b4aa9a3c7fdf53005c, type: 2}
+  startingWeapon: {fileID: 11400000, guid: 572a8eb621ab9cb43b9b6f8f3b711a86, type: 2}
   stats:
     maxHealth: 1
     recovery: 0

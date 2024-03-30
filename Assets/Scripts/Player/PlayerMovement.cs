@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Terresquall;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -71,11 +73,16 @@ public class PlayerMovement : MonoBehaviour
         
 
         float moveX, moveY;
+        if (VirtualJoystick.CountActiveInstances() > 0)
+        {
+            moveX = VirtualJoystick.GetAxisRaw("Horizontal");
+            moveY = VirtualJoystick.GetAxisRaw("Vertical");
+        }
+        else
         {
             moveX = Input.GetAxisRaw("Horizontal");
             moveY = Input.GetAxisRaw("Vertical");
         }
-        
 
         moveDir = new Vector2(moveX, moveY).normalized;
 
@@ -116,7 +123,11 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = moveDir * DEFAULT_MOVESPEED * player.Stats.moveSpeed;
     }
     
-    private IEnumerator Dash()
+    public void DoDash()
+    {
+        StartCoroutine(Dash());
+    }
+    public IEnumerator Dash()
     {
         Physics2D.IgnoreLayerCollision(8, 9, true);
         canDash = false;
@@ -124,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         rb.velocity = new Vector2(moveDir.x * dashSpeed, moveDir.y * dashSpeed);
+        am.Play("Wizzard_dash");
         yield return new WaitForSeconds(player.Stats.dashDuration);
         isDashing = false;
         Physics2D.IgnoreLayerCollision(8, 9, false);
