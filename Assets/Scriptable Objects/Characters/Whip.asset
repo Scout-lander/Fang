@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Whip
   startingWeapon: {fileID: 11400000, guid: 572a8eb621ab9cb43b9b6f8f3b711a86, type: 2}
   stats:
-    maxHealth: 1
+    maxHealth: 100
     recovery: 0
     armor: 0
     moveSpeed: 1

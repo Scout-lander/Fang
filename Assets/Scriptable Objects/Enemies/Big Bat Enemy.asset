@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2566456c0d4b1741b09a09a3e477ceb, type: 3}
-  m_Name: New Shooting Enemy Data
+  m_Script: {fileID: 11500000, guid: 7ef602b3d70fd29429478a222698ccca, type: 3}
+  m_Name: Big Bat Enemy
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  maxHealth: 100
-  damage: 10
-  shootingCooldown: 2
-  shootingDistance: 10
-  projectilePrefab: {fileID: 0}
-  projectileSpeed: 10
-  shootingDamage: 20
+  moveSpeed: 2
+  maxHealth: 75
+  damage: 15

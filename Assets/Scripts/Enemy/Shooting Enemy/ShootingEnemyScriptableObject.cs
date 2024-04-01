@@ -3,12 +3,42 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Shooting Enemy Data", menuName = "Enemy/Shooting Enemy Data")]
 public class ShootingEnemyScriptableObject : ScriptableObject
 {
-    public float moveSpeed = 5f; // Speed of enemy movement towards player
-    public float maxHealth = 100f; // Maximum health of the enemy
-    public float damage = 10f; // Damage dealt by the enemy on collision with player
-    public float shootingCooldown = 2f; // Cooldown between shots
-    public float shootingDistance = 10f; // Distance at which the enemy can shoot
-    public GameObject projectilePrefab; // Prefab of the projectile the enemy shoots
-    public float projectileSpeed = 10f; // Speed of the projectile
-    public float shootingDamage = 20f; // Damage dealt by the enemy's projectile
+    // Base stats for the enemy
+    [SerializeField] 
+    float moveSpeed;
+    public float MoveSpeed => moveSpeed;
+
+     [SerializeField]
+    float maxHealth;
+    public float MaxHealth { get => maxHealth; private set => maxHealth = value; }
+
+    [SerializeField] 
+    float collisionDamage; // Collision damage
+    public float CollisionDamage => collisionDamage;
+
+    [SerializeField] 
+    float shootingDamage;
+    public float ShootingDamage => shootingDamage;
+
+    [SerializeField] 
+    float shootingDistance = 10f; // Distance at which the enemy can shoot
+    public float ShootingDistance => shootingDistance;
+
+    [SerializeField]
+     GameObject projectilePrefab; // Prefab of the projectile the enemy shoots
+    public GameObject ProjectilePrefab => projectilePrefab;
+
+    [SerializeField]
+     float projectileSpeed = 10f; // Speed of the projectile
+    public float ProjectileSpeed => projectileSpeed;
+
+    [SerializeField] 
+     float shootingCooldown = 20f; // Cooldown between shots - changed to public
+    public float ShootingCooldown => shootingCooldown;
+
+    [SerializeField]
+     float knockbackDuration = 0.2f; // Duration of knockback when hit - changed to public
+    public float KnockbackDuration => knockbackDuration;
+
+    // Additional properties can be added as needed
 }

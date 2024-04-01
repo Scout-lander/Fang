@@ -19,8 +19,6 @@ MonoBehaviour:
   baseStats:
     name: Lightning Ring
     description: Strikes at random enemies.
-    nameColor: {r: 0, g: 0, b: 0, a: 0}
-    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 7516759946598892371, guid: 36874e7834133f64ca20d8fa7fd7a9b6, type: 3}
@@ -44,8 +42,6 @@ MonoBehaviour:
   linearGrowth:
   - name: Level 2
     description: Fires one more projectile.
-    nameColor: {r: 0, g: 0, b: 0, a: 0}
-    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -68,8 +64,6 @@ MonoBehaviour:
     maxInstances: 0
   - name: Level 3
     description: Base area up by 100%. Base damage up by 10.
-    nameColor: {r: 0, g: 0, b: 0, a: 0}
-    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -92,8 +86,6 @@ MonoBehaviour:
     maxInstances: 0
   - name: Level 4
     description: Fires one more projectile.
-    nameColor: {r: 0, g: 0, b: 0, a: 0}
-    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -116,8 +108,6 @@ MonoBehaviour:
     maxInstances: 0
   - name: Level 5
     description: Base area up by 100%. Base damage up by 10.
-    nameColor: {r: 0, g: 0, b: 0, a: 0}
-    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -140,8 +130,6 @@ MonoBehaviour:
     maxInstances: 0
   - name: Level 6
     description: Fires one more projectile.
-    nameColor: {r: 0, g: 0, b: 0, a: 0}
-    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -164,8 +152,6 @@ MonoBehaviour:
     maxInstances: 0
   - name: Level 7
     description: Base area up by 100%. Base damage up by 10.
-    nameColor: {r: 0, g: 0, b: 0, a: 0}
-    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -188,8 +174,6 @@ MonoBehaviour:
     maxInstances: 0
   - name: Level 8
     description: Fires one more projectile.
-    nameColor: {r: 0, g: 0, b: 0, a: 0}
-    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}
@@ -214,8 +198,6 @@ MonoBehaviour:
   currentWeapon:
     name: 
     description: 
-    nameColor: {r: 0, g: 0, b: 0, a: 0}
-    descriptionColor: {r: 0, g: 0, b: 0, a: 0}
     projectilePrefab: {fileID: 0}
     auraPrefab: {fileID: 0}
     hitEffect: {fileID: 0}

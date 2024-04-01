@@ -2,43 +2,57 @@ using UnityEngine;
 
 public class ShootingEnemyMovement : MonoBehaviour
 {
-    public ShootingEnemyScriptableObject enemyData;
+    private ShootingEnemyData enemy;
+    private Transform player;
 
-    private Transform player; // Reference to the player's transform
-    private bool canShoot = false;
+    Vector2 knockbackVelocity;
+    float knockbackDuration;
 
-    private void Start()
+    void Start()
     {
-        player = FindObjectOfType<PlayerStats>().transform;
+        enemy = GetComponent<ShootingEnemyData>();
+        player = FindObjectOfType<PlayerMovement>()?.transform;
     }
 
-    private void Update()
+    void Update()
     {
-        if (!canShoot)
+        if (player != null)
         {
-            MoveTowardsPlayer();
-            CheckDistanceToPlayer();
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+            // If the distance to the player is greater than the stopping distance, move towards the player
+            if (distanceToPlayer > enemy.stoppingDistance && knockbackDuration <= 0)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, enemy.currentMoveSpeed * Time.deltaTime);
+            }
+        }
+
+        if(knockbackDuration > 0)
+        {
+            transform.position += (Vector3)knockbackVelocity * Time.deltaTime;
+            knockbackDuration -= Time.deltaTime;
         }
     }
-
-    private void MoveTowardsPlayer()
+    
+    public Vector3 RetrievePlayerPosition()
     {
-        if (player == null)
-            return;
-
-        transform.LookAt(player);
-        transform.Translate(Vector3.forward * enemyData.moveSpeed * Time.deltaTime);
-    }
-
-    private void CheckDistanceToPlayer()
-    {
-        if (player == null)
-            return;
-
-        float distance = Vector3.Distance(transform.position, player.position);
-        if (distance <= enemyData.shootingDistance)
+        if (player != null)
         {
-            canShoot = true;
+            return player.position;
         }
+        else
+        {
+            return Vector3.zero;
+        }
+    }
+    
+    public void Knockback(Vector2 velocity, float duration)
+    {
+        // Ignore the knockback if the duration is greater than 0.
+        if(knockbackDuration > 0) return;
+
+        // Begins the knockback.
+        knockbackVelocity = velocity;
+        knockbackDuration = duration;
     }
 }

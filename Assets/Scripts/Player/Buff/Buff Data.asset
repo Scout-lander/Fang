@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 269d4d9999a5580429c2ca7d5012a110, type: 3}
-  m_Name: DrunkBuff
+  m_Name: Buff Data
   m_EditorClassIdentifier: 
-  name: DrunkBuff
+  name: 
   modifier:
     maxHealth: 0
-    recovery: -5
+    recovery: 0
     armor: 0
-    moveSpeed: 1.5
-    might: 2.23
-    area: 2.12
-    speed: 0.18
-    duration: 0.14
-    amount: 1
+    moveSpeed: 0
+    might: 0
+    area: 0
+    speed: 0
+    duration: 0
+    amount: 0
     cooldown: 0
     luck: 0
     growth: 0
     greed: 0
     curse: 0
-    dashDuration: 0.1
+    dashDuration: 0
     magnet: 0
     revival: 0
     dashCooldown: 0

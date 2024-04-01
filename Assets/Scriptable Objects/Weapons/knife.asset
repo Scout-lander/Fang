@@ -66,8 +66,6 @@ MonoBehaviour:
       piercing: 0
       maxInstances: 0
     percentageChanceOfRarity: 10
-    nameColor: <color=white>
-    descriptionColor: <color=white>
   - rarity: 1
     stats:
       name: <color=red>knife uncommom</color>
@@ -93,8 +91,6 @@ MonoBehaviour:
       piercing: 0
       maxInstances: 0
     percentageChanceOfRarity: 50
-    nameColor: <color=white>
-    descriptionColor: <color=white>
   currentWeapon:
     name: 
     description: 

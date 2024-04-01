@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AnimationSheet_Character_0
+      name: Hood_0
       rect:
         serializedVersion: 2
         x: 7
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47866111e18c4524bba7af58d011d92d
-      internalID: 1052867832
+      spriteID: c2bf490cea5bd8d45950deb57c20c5c5
+      internalID: -1803653452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_1
+      name: Hood_1
       rect:
         serializedVersion: 2
         x: 39
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83529dd712633204fa5cc3b81ec93f2f
-      internalID: -282458909
+      spriteID: b4d78c8f1e767b545ba6f4afc0fd4bf1
+      internalID: 1840989579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_2
+      name: Hood_2
       rect:
         serializedVersion: 2
         x: 7
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 397df7043477eed439e8dc2265409e5b
-      internalID: 1230791069
+      spriteID: 314f2d30e863d1f49ae9a4ae6de958d8
+      internalID: -1091203382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_3
+      name: Hood_3
       rect:
         serializedVersion: 2
         x: 39
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 878c633046acb354ab45b625c8be21a0
-      internalID: -116948238
+      spriteID: 839307fd03e791b418f357d9fc6d6895
+      internalID: 494471930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_4
+      name: Hood_4
       rect:
         serializedVersion: 2
         x: 6
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 343fddcd4ffbbb84db890ff6e35258a5
-      internalID: 1585145468
+      spriteID: fcad837006a631945a4706e35c6c6833
+      internalID: 1952510079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_5
+      name: Hood_5
       rect:
         serializedVersion: 2
         x: 39
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c54db59ef5982cd47b9f085b6f2846f6
-      internalID: -946329578
+      spriteID: ec0d2fc75b0102740ba74b9d17c81fb8
+      internalID: 694255642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_6
+      name: Hood_6
       rect:
         serializedVersion: 2
         x: 71
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e87e28503140b054bb3c840db2a8488e
-      internalID: -1164303559
+      spriteID: db5b6f0c77d2f854f811373d00749be4
+      internalID: -1336935995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_7
+      name: Hood_7
       rect:
         serializedVersion: 2
         x: 103
@@ -284,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aba99211a63d01c4c866002cce92a851
-      internalID: -912878904
+      spriteID: ac56cd2c47ab04f48833b2911f995408
+      internalID: 1869138511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_8
+      name: Hood_8
       rect:
         serializedVersion: 2
         x: 6
@@ -305,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3e5eaf63297fcb4aa545f6e5dadc10e
-      internalID: 56998942
+      spriteID: 305151fde8be1d547ad8a50a43295fba
+      internalID: 1922484158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_9
+      name: Hood_9
       rect:
         serializedVersion: 2
         x: 39
@@ -326,14 +326,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4715c6c4934bfd94ab8df6862450e947
-      internalID: 2073529317
+      spriteID: 9130745829f9ed64faf0e164db515417
+      internalID: 630688201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_10
+      name: Hood_10
       rect:
         serializedVersion: 2
         x: 71
@@ -347,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aaab1b81b960ea4ea5cf223adf9cd96
-      internalID: 409940646
+      spriteID: b4cfedaef56c50044aaec193c8eee092
+      internalID: -510877336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_11
+      name: Hood_11
       rect:
         serializedVersion: 2
         x: 103
@@ -368,14 +368,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e52dd6c213ef444c83921d01dcf33ac
-      internalID: 6592930
+      spriteID: 82c824ee694a9ff478711e4ebed27b0a
+      internalID: 1202784742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_12
+      name: Hood_12
       rect:
         serializedVersion: 2
         x: 134
@@ -389,14 +389,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba1508d76a742b34eaa5c729d4568040
-      internalID: 1828378578
+      spriteID: ac183068445fd7b4d9050a076fefd622
+      internalID: 756451777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_13
+      name: Hood_13
       rect:
         serializedVersion: 2
         x: 167
@@ -410,14 +410,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d4c81f89bbec7e48b36e66cd395b665
-      internalID: 1715260478
+      spriteID: 0e69c8dee3549a84085866c1f58480c6
+      internalID: 1387424977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_14
+      name: Hood_14
       rect:
         serializedVersion: 2
         x: 199
@@ -431,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2aea97d4cfbdc7045bcdfd4b2e7d019e
-      internalID: 1945051421
+      spriteID: 0c8780024e214b04eaf1161e2ba778aa
+      internalID: 239009920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_15
+      name: Hood_15
       rect:
         serializedVersion: 2
         x: 231
@@ -452,14 +452,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abf91d5ea29d4e84593e1ba707965f17
-      internalID: -45806087
+      spriteID: c2ab0ea1a4b1d934bab720ce6b3fe08f
+      internalID: -760822681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_16
+      name: Hood_16
       rect:
         serializedVersion: 2
         x: 7
@@ -473,14 +473,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 757489a8e4f439b438563f865a4dcd43
-      internalID: 249729887
+      spriteID: ab8d37159586dae418f7aadd1e220249
+      internalID: -1975790921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_17
+      name: Hood_17
       rect:
         serializedVersion: 2
         x: 38
@@ -494,14 +494,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c03ffac987ffd8541b37f965fc7e5be3
-      internalID: 70070958
+      spriteID: 871d4bc3e08b7584c87d6764a73ff975
+      internalID: -1343766768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_18
+      name: Hood_18
       rect:
         serializedVersion: 2
         x: 69
@@ -515,14 +515,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8d15bc129f5b764c8385ddfc00e62d9
-      internalID: -1129197187
+      spriteID: 437a428ce0850f846ba71442c7c3c8bc
+      internalID: -445485192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_19
+      name: Hood_19
       rect:
         serializedVersion: 2
         x: 100
@@ -536,14 +536,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbdb23482bc489d47b8422a0d58a5443
-      internalID: 67349807
+      spriteID: 273c7f96e260c994aac1e2c8ec4eb3e2
+      internalID: -556957976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_20
+      name: Hood_20
       rect:
         serializedVersion: 2
         x: 134
@@ -557,14 +557,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb0585baf3e28f447bedd9fcabce4a69
-      internalID: -1209289707
+      spriteID: 4183b228d116abd4da38b1c8bef54b0a
+      internalID: 1373299619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_21
+      name: Hood_21
       rect:
         serializedVersion: 2
         x: 166
@@ -578,14 +578,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1f1926cfc4e1c54a827f4536d692d42
-      internalID: 1948475109
+      spriteID: 01541a15fc5727d45a2535024f9d28f4
+      internalID: -140518966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_22
+      name: Hood_22
       rect:
         serializedVersion: 2
         x: 7
@@ -599,14 +599,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddb70d62523fddf438db95a178566eb8
-      internalID: 1959134116
+      spriteID: 8b0d153eadf9dfe4aaa0741add001f11
+      internalID: 679169965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_23
+      name: Hood_23
       rect:
         serializedVersion: 2
         x: 38
@@ -620,14 +620,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e54378493a655e542ac78b2eba50645f
-      internalID: 1968722444
+      spriteID: e5487cbe065ba114d844f2f24777273c
+      internalID: 653567603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_24
+      name: Hood_24
       rect:
         serializedVersion: 2
         x: 71
@@ -641,20 +641,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfb8c8e82fc3c1e4d9341fccaf9f032f
-      internalID: -1114855931
+      spriteID: f5e7f68971b996b4083655cab9d2ac46
+      internalID: 2055034879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_25
+      name: Hood_25
       rect:
         serializedVersion: 2
         x: 102
-        y: 77
+        y: 99
         width: 18
-        height: 50
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -662,14 +662,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25ee4241ab066fb4b8dd03a4e742675b
-      internalID: 1009408225
+      spriteID: 7c62e6db814c088449b26b2ea88315d3
+      internalID: -592181475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_26
+      name: Hood_26
       rect:
         serializedVersion: 2
         x: 134
@@ -683,14 +683,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ffc41f91108f3449abb0f390ab7de6b
-      internalID: -501679454
+      spriteID: 7c460670543e12b4588b559117caa4e4
+      internalID: 1506430230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_27
+      name: Hood_27
       rect:
         serializedVersion: 2
         x: 166
@@ -704,14 +704,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e06b2ec5cd901b4897859611c557078
-      internalID: 217845393
+      spriteID: a4467af1692a0bc409a408a1c9399285
+      internalID: 884156248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_28
+      name: Hood_28
       rect:
         serializedVersion: 2
         x: 198
@@ -725,14 +725,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9f9b7ac7664feb4fa574f782247a2a7
-      internalID: -125613916
+      spriteID: 64c207059c1482e4d9f61b40a171c4fb
+      internalID: 1922276564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_29
+      name: Hood_29
       rect:
         serializedVersion: 2
         x: 230
@@ -746,14 +746,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80aa944bd2b9c5e4dacea5f98d923184
-      internalID: -1008364700
+      spriteID: fd051270704034e40a662f5cb7681042
+      internalID: -1266720657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_30
+      name: Hood_30
       rect:
         serializedVersion: 2
         x: 7
@@ -767,14 +767,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06400024079bb9748aa92fa3e516a280
-      internalID: -1218826298
+      spriteID: fdc95e81752363d4998f5b788345866a
+      internalID: 594935025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_31
+      name: Hood_31
       rect:
         serializedVersion: 2
         x: 38
@@ -788,14 +788,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b80ea933492112c4fadb8ec8ee37f32d
-      internalID: 367430494
+      spriteID: 415ef2e28996a364699aeabad01aac66
+      internalID: -792133313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_32
+      name: Hood_32
       rect:
         serializedVersion: 2
         x: 70
@@ -809,14 +809,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f5d354bd2662a9489780b0cfb13a7c8
-      internalID: -9658467
+      spriteID: 7af3d822a395d5a4aad00801e2120897
+      internalID: -718558955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_33
+      name: Hood_33
       rect:
         serializedVersion: 2
         x: 7
@@ -830,14 +830,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e4d6c75889f7b049b3b0b8c27eedf33
-      internalID: 351744035
+      spriteID: c06102b1393b59240a747388f60f2cd3
+      internalID: 269022568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_34
+      name: Hood_34
       rect:
         serializedVersion: 2
         x: 37
@@ -851,14 +851,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b209680b11c0bcd41a61a05840bf099f
-      internalID: -918616097
+      spriteID: 8a29fe6031fac9d4b9b7b68806ffd3e2
+      internalID: 667107988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_35
+      name: Hood_35
       rect:
         serializedVersion: 2
         x: 70
@@ -872,20 +872,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 554c77a0c93ff9e489e1b8371349398e
-      internalID: -1142541684
+      spriteID: b50729131ba532543ac2066b93db9dcb
+      internalID: -376638392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_36
+      name: Hood_36
       rect:
         serializedVersion: 2
         x: 102
         y: 0
-        width: 20
-        height: 55
+        width: 24
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -893,20 +893,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f3810bff5bcae04196c23c60f3a3e95
-      internalID: 273386655
+      spriteID: 9c79fd4108f1b7a49ad0318e87c58006
+      internalID: -1572633152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_37
+      name: Hood_37
       rect:
         serializedVersion: 2
-        x: 134
-        y: 0
-        width: 28
-        height: 49
+        x: 135
+        y: 32
+        width: 21
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -914,14 +914,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb9fb5060b87ffb47918f3c5bf5c0a52
-      internalID: 1218578852
+      spriteID: 6317a70f6962c62458db0d049ffdf8a5
+      internalID: -567478192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_38
+      name: Hood_38
       rect:
         serializedVersion: 2
         x: 162
@@ -935,14 +935,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06ee300b63a9f0947bdffdeeb46b23cc
-      internalID: 1412466334
+      spriteID: 1b52e2dc59b35b54dab7914797945730
+      internalID: -2097755688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_39
+      name: Hood_39
       rect:
         serializedVersion: 2
         x: 194
@@ -956,14 +956,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 005c1217f3ef90446a1a4c17a14df731
-      internalID: 2032125323
+      spriteID: c8e95c3b74c50fa4eace0868b449d9a6
+      internalID: 248716854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_40
+      name: Hood_40
       rect:
         serializedVersion: 2
         x: 226
@@ -977,14 +977,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fa30b358eb089e459daafdca0f4b3dc
-      internalID: -1029776800
+      spriteID: 3410eb7571892f946a30c12b7401c63a
+      internalID: 930525145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_41
+      name: Hood_41
       rect:
         serializedVersion: 2
         x: 7
@@ -998,19 +998,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4319791ed90a2ec498b1a81841b8c926
-      internalID: -1066126104
+      spriteID: d1135016554ea36419abe2f4dc9cea4d
+      internalID: 1774367492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_42
+      name: Hood_42
       rect:
         serializedVersion: 2
         x: 40
         y: 0
-        width: 17
+        width: 16
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1019,19 +1019,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3311562968a4f33489aaa12851aa1345
-      internalID: 971937044
+      spriteID: 29dbb56cc70b37f42b19f8d8b80e71c4
+      internalID: -1797551561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_43
+      name: Hood_43
       rect:
         serializedVersion: 2
         x: 71
         y: 0
-        width: 20
+        width: 21
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1040,19 +1040,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 915eb6aa2290f31448a0cad9a0995c83
-      internalID: 1571561273
+      spriteID: 4846512be54119d4eafc660de09512c9
+      internalID: -1217569838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_44
+      name: Hood_44
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7dbfafdd1e92c24d8df21559ddf40b1
+      internalID: -893617028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hood_45
       rect:
         serializedVersion: 2
         x: 166
         y: 0
-        width: 21
+        width: 26
         height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1061,19 +1082,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a84ba97d47af0214883326c59ffee646
-      internalID: 1951864839
+      spriteID: f57e91ee7c8d9b4479dfca49e45f8e63
+      internalID: -2107640263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_45
+      name: Hood_46
       rect:
         serializedVersion: 2
-        x: 194
+        x: 195
         y: 0
-        width: 21
+        width: 20
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1082,19 +1103,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b45eef1d887c4b4c8bdbdfc03830623
-      internalID: 840284348
+      spriteID: e70e3512bf17ed843ac542ff10c32e7f
+      internalID: -1305664749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AnimationSheet_Character_46
+      name: Hood_48
       rect:
         serializedVersion: 2
-        x: 225
+        x: 231
         y: 0
-        width: 22
+        width: 16
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1103,8 +1124,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec91019fe754605499ee75c897599a14
-      internalID: -1025092156
+      spriteID: 6bef44691ed66fb438b9448bc22f4479
+      internalID: 694506300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hood_49
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 31
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ebafeb095f7e34b8ae078b454471f7
+      internalID: 22004388
       vertices: []
       indices: 
       edges: []
@@ -1120,53 +1162,56 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AnimationSheet_Character_0: 1052867832
-      AnimationSheet_Character_1: -282458909
-      AnimationSheet_Character_10: 409940646
-      AnimationSheet_Character_11: 6592930
-      AnimationSheet_Character_12: 1828378578
-      AnimationSheet_Character_13: 1715260478
-      AnimationSheet_Character_14: 1945051421
-      AnimationSheet_Character_15: -45806087
-      AnimationSheet_Character_16: 249729887
-      AnimationSheet_Character_17: 70070958
-      AnimationSheet_Character_18: -1129197187
-      AnimationSheet_Character_19: 67349807
-      AnimationSheet_Character_2: 1230791069
-      AnimationSheet_Character_20: -1209289707
-      AnimationSheet_Character_21: 1948475109
-      AnimationSheet_Character_22: 1959134116
-      AnimationSheet_Character_23: 1968722444
-      AnimationSheet_Character_24: -1114855931
-      AnimationSheet_Character_25: 1009408225
-      AnimationSheet_Character_26: -501679454
-      AnimationSheet_Character_27: 217845393
-      AnimationSheet_Character_28: -125613916
-      AnimationSheet_Character_29: -1008364700
-      AnimationSheet_Character_3: -116948238
-      AnimationSheet_Character_30: -1218826298
-      AnimationSheet_Character_31: 367430494
-      AnimationSheet_Character_32: -9658467
-      AnimationSheet_Character_33: 351744035
-      AnimationSheet_Character_34: -918616097
-      AnimationSheet_Character_35: -1142541684
-      AnimationSheet_Character_36: 273386655
-      AnimationSheet_Character_37: 1218578852
-      AnimationSheet_Character_38: 1412466334
-      AnimationSheet_Character_39: 2032125323
-      AnimationSheet_Character_4: 1585145468
-      AnimationSheet_Character_40: -1029776800
-      AnimationSheet_Character_41: -1066126104
-      AnimationSheet_Character_42: 971937044
-      AnimationSheet_Character_43: 1571561273
-      AnimationSheet_Character_44: 1951864839
-      AnimationSheet_Character_45: 840284348
-      AnimationSheet_Character_46: -1025092156
-      AnimationSheet_Character_5: -946329578
-      AnimationSheet_Character_6: -1164303559
-      AnimationSheet_Character_7: -912878904
-      AnimationSheet_Character_8: 56998942
-      AnimationSheet_Character_9: 2073529317
+      Hood_0: -1803653452
+      Hood_1: 1840989579
+      Hood_10: -510877336
+      Hood_11: 1202784742
+      Hood_12: 756451777
+      Hood_13: 1387424977
+      Hood_14: 239009920
+      Hood_15: -760822681
+      Hood_16: -1975790921
+      Hood_17: -1343766768
+      Hood_18: -445485192
+      Hood_19: -556957976
+      Hood_2: -1091203382
+      Hood_20: 1373299619
+      Hood_21: -140518966
+      Hood_22: 679169965
+      Hood_23: 653567603
+      Hood_24: 2055034879
+      Hood_25: -592181475
+      Hood_26: 1506430230
+      Hood_27: 884156248
+      Hood_28: 1922276564
+      Hood_29: -1266720657
+      Hood_3: 494471930
+      Hood_30: 594935025
+      Hood_31: -792133313
+      Hood_32: -718558955
+      Hood_33: 269022568
+      Hood_34: 667107988
+      Hood_35: -376638392
+      Hood_36: -1572633152
+      Hood_37: -567478192
+      Hood_38: -2097755688
+      Hood_39: 248716854
+      Hood_4: 1952510079
+      Hood_40: 930525145
+      Hood_41: 1774367492
+      Hood_42: -1797551561
+      Hood_43: -1217569838
+      Hood_44: -893617028
+      Hood_45: -2107640263
+      Hood_46: -1305664749
+      Hood_47: 1334347474
+      Hood_48: 694506300
+      Hood_49: 22004388
+      Hood_5: 694255642
+      Hood_6: -1336935995
+      Hood_7: 1869138511
+      Hood_8: 1922484158
+      Hood_9: 630688201
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -166,7 +166,7 @@ MonoBehaviour:
   bobbingAnimation:
     frequency: 2
     direction: {x: 0, y: 0.3}
-  experience: 120
+  experience: 150
   health: 0
 --- !u!1 &4110613040571285360
 GameObject:

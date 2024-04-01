@@ -4,15 +4,17 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class ShootingEnemyData : MonoBehaviour
 {
-    public ShootingEnemyScriptableObject enemyData;
+    public ShootingEnemyScriptableObject SenemyData;
 
     // Current stats
     public float currentMoveSpeed;
     public float currentHealth;
     public float currentDamage; // Collision damage
     public float shootingDamage; // Shooting damage
-
+    public float maxShootingDistance = 10f; // Maximum shooting distance
+    public float stoppingDistance = 5f; // Distance at which enemy stops moving
     public float despawnDistance = 20f;
+
     Transform player;
 
     [Header("Damage Feedback")]
@@ -21,26 +23,28 @@ public class ShootingEnemyData : MonoBehaviour
     public float deathFadeTime = 0.6f; // How much time it takes for the enemy to fade.
     Color originalColor;
     SpriteRenderer sr;
-
+    ShootingEnemyMovement movement;
     private bool canShoot = true;
+    private Coroutine shootingCoroutine;
 
     void Awake()
     {
         // Assign the variables
-        currentMoveSpeed = enemyData.moveSpeed;
-        currentHealth = enemyData.maxHealth;
-        currentDamage = enemyData.damage; // Assign collision damage
-        shootingDamage = enemyData.shootingDamage; // Assign shooting damage
+        currentMoveSpeed = SenemyData.MoveSpeed;
+        currentHealth = SenemyData.MaxHealth;
+        currentDamage = SenemyData.CollisionDamage; // Assign collision damage
+        shootingDamage = SenemyData.ShootingDamage; // Assign shooting damage
     }
 
     void Start()
     {
-        player = FindObjectOfType<PlayerStats>().transform;
+        player = FindObjectOfType<PlayerStats>()?.transform;
         sr = GetComponent<SpriteRenderer>();
         originalColor = sr.color;
 
+        movement = GetComponent<ShootingEnemyMovement>();
         // Start shooting coroutine
-        StartCoroutine(ShootCoroutine());
+        shootingCoroutine = StartCoroutine(ShootCoroutine());
     }
 
     void Update()
@@ -55,9 +59,9 @@ public class ShootingEnemyData : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(enemyData.shootingCooldown);
+            yield return new WaitForSecondsRealtime(SenemyData.ShootingCooldown);
 
-            if (canShoot)
+            if (canShoot && Vector2.Distance(transform.position, player.position) <= maxShootingDistance)
             {
                 Shoot();
             }
@@ -70,9 +74,9 @@ public class ShootingEnemyData : MonoBehaviour
             return;
 
         Vector3 direction = (player.position - transform.position).normalized;
-        GameObject projectile = Instantiate(enemyData.projectilePrefab, transform.position, Quaternion.identity);
+        GameObject projectile = Instantiate(SenemyData.ProjectilePrefab, transform.position, Quaternion.identity);
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        rb.velocity = direction * enemyData.projectileSpeed;
+        rb.velocity = direction * SenemyData.ProjectileSpeed;
 
         // Set damage of the projectile
         ProjectileScript projectileScript = projectile.GetComponent<ProjectileScript>();
@@ -87,14 +91,26 @@ public class ShootingEnemyData : MonoBehaviour
 
     IEnumerator ResetShoot()
     {
-        yield return new WaitForSeconds(enemyData.shootingCooldown);
+        yield return new WaitForSecondsRealtime(SenemyData.ShootingCooldown);
         canShoot = true;
     }
 
-    public void TakeDamage(float dmg)
+    public void TakeDamage(float dmg, Vector2 sourcePosition, float knockbackForce = 5f, float knockbackDuration = 0.2f)
     {
         currentHealth -= dmg;
         StartCoroutine(DamageFlash());
+
+        // Create the text popup when enemy takes damage.
+        if (dmg > 0)
+            GameManager.GenerateFloatingText(Mathf.FloorToInt(dmg).ToString(), transform);
+
+        // Apply knockback if it is not zero.
+        if(knockbackForce > 0)
+        {
+            // Gets the direction of knockback.
+            Vector2 dir = (Vector2)transform.position - sourcePosition;
+            movement.Knockback(dir.normalized * knockbackForce, knockbackDuration);
+        }
 
         // Kills the enemy if the health drops below zero.
         if (currentHealth <= 0)
@@ -106,12 +122,13 @@ public class ShootingEnemyData : MonoBehaviour
     IEnumerator DamageFlash()
     {
         sr.color = damageColor;
-        yield return new WaitForSeconds(damageFlashDuration);
+        yield return new WaitForSecondsRealtime(damageFlashDuration);
         sr.color = originalColor;
     }
 
     public void Kill()
     {
+        StopCoroutine(shootingCoroutine); // Stop the shooting coroutine
         StartCoroutine(KillFade());
     }
 
@@ -135,14 +152,14 @@ public class ShootingEnemyData : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
-            player.TakeDamage(currentDamage); // Apply collision damage
+            player?.TakeDamage(currentDamage); // Apply collision damage if the player is not null
         }
     }
 
     private void OnDestroy()
     {
-        EnemySpawner es = FindObjectOfType<EnemySpawner>();
-        if (es) es.OnEnemyKilled();
+         EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        if(es) es.OnEnemyKilled();
     }
 
     void ReturnEnemy()

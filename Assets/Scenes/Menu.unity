@@ -1035,7 +1035,7 @@ MonoBehaviour:
         m_MethodName: SelectCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: e69cc7067731b2d4a80834ce0cf76200, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: ca4db608da204ea40a98d0a01077a906, type: 2}
           m_ObjectArgumentAssemblyTypeName: CharacterData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
