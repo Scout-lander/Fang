@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: ba1a4111ae4011449ad7787e4101f5f0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 65
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Magican_Walk_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 49
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe960d7a41579e4ea3d61495908b85c
+      internalID: -1085503142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magican_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 49
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4964b10389b5224682bfb007acdc23f
+      internalID: 1392549622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magican_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 0
+        width: 49
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5fe6e871a75e244b013a117393ffa8
+      internalID: 812394979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magican_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 49
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71f46d9d190b624b92fff7dae3dff4f
+      internalID: 13621827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magican_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 0
+        width: 49
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c6752d51eb339343b72a8ccc4b759f5
+      internalID: -1156650681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magican_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 0
+        width: 49
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9242c23c6f1e7bb43ace94b433045625
+      internalID: -1943586073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magican_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 0
+        width: 49
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e20915abd800d24594c6fe6035715ef
+      internalID: -995843135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Magican_Walk_0: -1085503142
+      Magican_Walk_1: 1392549622
+      Magican_Walk_2: 812394979
+      Magican_Walk_3: 13621827
+      Magican_Walk_4: -1156650681
+      Magican_Walk_5: -1943586073
+      Magican_Walk_6: -995843135
+      Walk_0: -1291391679
+      Walk_1: 275349265
+      Walk_10: 609387095
+      Walk_11: 1126314749
+      Walk_12: 785620023
+      Walk_13: 2001115501
+      Walk_14: 67414595
+      Walk_15: 869318259
+      Walk_16: -1229931120
+      Walk_17: -904601022
+      Walk_18: 1993263738
+      Walk_19: -790482920
+      Walk_2: -788981007
+      Walk_20: -561583183
+      Walk_21: 1139194717
+      Walk_22: -470268490
+      Walk_23: 265801686
+      Walk_24: 1005190734
+      Walk_25: 704842695
+      Walk_26: -1846732639
+      Walk_27: 770625509
+      Walk_28: -2060073634
+      Walk_29: -322801142
+      Walk_3: -2025388741
+      Walk_30: 672690637
+      Walk_31: 1551253106
+      Walk_32: 1441015443
+      Walk_33: 139898168
+      Walk_34: 1800324639
+      Walk_35: -1171940926
+      Walk_36: 79656997
+      Walk_37: 698264132
+      Walk_38: 1023935656
+      Walk_39: 381390040
+      Walk_4: 509348812
+      Walk_40: 220822822
+      Walk_41: -1403672504
+      Walk_42: 1470920377
+      Walk_43: -4280777
+      Walk_44: -115439331
+      Walk_45: 1123309631
+      Walk_46: -834155306
+      Walk_47: 1505838281
+      Walk_48: 1260075276
+      Walk_49: 569622631
+      Walk_5: -1341725882
+      Walk_50: 1868541426
+      Walk_51: 1176531948
+      Walk_52: -261845084
+      Walk_53: -1716556491
+      Walk_54: -1559368810
+      Walk_55: 167715641
+      Walk_56: -1237213375
+      Walk_57: -1021619237
+      Walk_6: -1984776495
+      Walk_7: 211505143
+      Walk_8: 1241892327
+      Walk_9: -422837630
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

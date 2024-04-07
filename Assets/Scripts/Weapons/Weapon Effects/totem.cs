@@ -26,10 +26,10 @@ public class TotemEffect : WeaponEffect
         Collider2D[] colliders = Physics2D.OverlapCircleAll(spawnPosition, areaOfEffectRadius);
         foreach (Collider2D collider in colliders)
         {
-            if (collider.TryGetComponent(out EnemyStats enemyStats))
+            if (collider.TryGetComponent(out EnemyStats EnemyStats))
             {
                 // Deal damage to enemies within the area of effect
-                enemyStats.TakeDamage(GetDamage(), spawnPosition);
+                EnemyStats.TakeDamage(GetDamage(), spawnPosition);
             }
         }
     }

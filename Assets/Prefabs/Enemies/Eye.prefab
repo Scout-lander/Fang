@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 3531847802642447313}
   - component: {fileID: 6999025223477298302}
   - component: {fileID: 1681103269400754700}
-  - component: {fileID: 6927221645618015883}
-  - component: {fileID: -7602677042281809596}
-  - component: {fileID: -795710446142637703}
-  - component: {fileID: 7669766589036361182}
   - component: {fileID: 3445734518291220317}
+  - component: {fileID: 7669766589036361182}
+  - component: {fileID: -5850520998206475896}
+  - component: {fileID: 1838425721178644574}
+  - component: {fileID: 4700865261165507728}
+  - component: {fileID: -3050594293898358689}
   m_Layer: 8
   m_Name: Eye
   m_TagString: Enemy
@@ -111,66 +112,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6927221645618015883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7580874053709667879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50293041f5d55a749a7d11e2ea8594b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-7602677042281809596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7580874053709667879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8354af90658fa984495e7be309fc3bc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-795710446142637703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7580874053709667879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae9deb745e878bb49a7f4732240fa7c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 3b656d060dcb62043a31ebff4fa69c62, type: 2}
-  currentMoveSpeed: 0
-  currentHealth: 0
-  currentDamage: 0
-  despawnDistance: 20
-  damageColor: {r: 1, g: 0, b: 0, a: 1}
-  damageFlashDuration: 0.2
-  deathFadeTime: 0.6
---- !u!114 &7669766589036361182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7580874053709667879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d01e7825e557fbd4397ed8f41bb71c0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drops:
-  - name: XP Gem
-    itemPrefab: {fileID: 3322201518369577180, guid: b4b6f1c086abc4e4fa68fe184495f0cc, type: 3}
-    dropRate: 75
 --- !u!58 &3445734518291220317
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -206,3 +147,104 @@ CircleCollider2D:
   m_Offset: {x: 0.0036033392, y: 0}
   serializedVersion: 2
   m_Radius: 0.39078438
+--- !u!114 &7669766589036361182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7580874053709667879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01e7825e557fbd4397ed8f41bb71c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: XP Gem
+    itemPrefab: {fileID: 3322201518369577180, guid: b4b6f1c086abc4e4fa68fe184495f0cc, type: 3}
+    dropRate: 75
+--- !u!114 &-5850520998206475896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7580874053709667879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000a3d08871511419cbc9dadd2a51d1a66851176219d5748f01
+  m_ShapePath:
+  - {x: -0.23573339, y: 0.09884278, z: 0}
+  - {x: -0.19302475, y: 0.19141617, z: 0}
+  - {x: -0.016972065, y: 0.29364082, z: 0}
+  - {x: 0.13511729, y: 0.2493236, z: 0}
+  - {x: 0.23162973, y: 0.14959416, z: 0}
+  - {x: 0.28077245, y: 0.020189084, z: 0}
+  - {x: 0.2638005, y: -0.09490385, z: 0}
+  - {x: 0.18015647, y: -0.22036996, z: 0}
+  - {x: 0.02662313, y: -0.24216759, z: 0}
+  - {x: -0.1447686, y: -0.20750162, z: 0}
+  - {x: -0.23162973, y: -0.06916722, z: 0}
+  m_ShapePathHash: 82904179
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -126366
+  m_LocalBounds:
+    m_Center: {x: 0.022519529, y: 0.02573663, z: 0}
+    m_Extent: {x: 0.25825292, y: 0.26790422, z: 0}
+--- !u!114 &1838425721178644574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7580874053709667879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3dd88399274a144c9fef3a7bdd9b7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4700865261165507728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7580874053709667879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e13413a2eb9d943a1881feb21ef44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3050594293898358689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7580874053709667879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c9b0633c9d13149a186f12e790623a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: de897f0ecb85b5245bb4049b500b39f8, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  collisionDamage: 0
+  despawnDistance: 20
+  CollisionEnemy: 0
+  ShootingEnemy: 0
+  SummonerEnemy: 0
+  SplittingEnemy: 0
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.2
+  deathFadeTime: 0.6

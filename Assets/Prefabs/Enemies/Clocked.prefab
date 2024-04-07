@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 7047817430718585708}
   - component: {fileID: 4193112312619027109}
   - component: {fileID: 1566264170482041902}
-  - component: {fileID: -4670239868814207484}
-  - component: {fileID: -5331154176577392077}
-  - component: {fileID: -1972764404459954237}
+  - component: {fileID: 1413921287055594257}
+  - component: {fileID: 8513630023251147163}
   m_Layer: 8
   m_Name: Clocked
   m_TagString: Enemy
@@ -199,11 +198,11 @@ MonoBehaviour:
   - {x: 0.15149143, y: 0.09495184, z: 0}
   m_ShapePathHash: 39936199
   m_Mesh: {fileID: 0}
-  m_InstanceId: 52930
+  m_InstanceId: 68920
   m_LocalBounds:
     m_Center: {x: 0.0026859194, y: 0.111018434, z: 0}
     m_Extent: {x: 0.14880551, y: 0.15036306, z: 0}
---- !u!114 &-4670239868814207484
+--- !u!114 &1413921287055594257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,10 +211,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 461759420925149495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59eed014b5bdd1549b2b82ff99c1efb2, type: 3}
+  m_Script: {fileID: 11500000, guid: a3dd88399274a144c9fef3a7bdd9b7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5331154176577392077
+--- !u!114 &8513630023251147163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,29 +223,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 461759420925149495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb8878f5ec5210640bc3e3db81311c03, type: 3}
+  m_Script: {fileID: 11500000, guid: 33c9b0633c9d13149a186f12e790623a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SenemyData: {fileID: 11400000, guid: 6db37c96ea4849b4ea77dcbf04647c27, type: 2}
+  enemyData: {fileID: 11400000, guid: bd8cd9ba34510764f8f05969807cccd3, type: 2}
   currentMoveSpeed: 0
   currentHealth: 0
-  currentDamage: 0
-  shootingDamage: 0
-  maxShootingDistance: 10
-  stoppingDistance: 5
+  collisionDamage: 0
   despawnDistance: 20
+  canSplitOnDeath: 0
+  enemySplitPrefab: {fileID: 0}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6
---- !u!114 &-1972764404459954237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461759420925149495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 880c2cff1b13e6c4e9158796777237c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

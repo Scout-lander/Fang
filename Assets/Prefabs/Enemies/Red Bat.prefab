@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 461759420925149489}
   - component: {fileID: 461759420925149488}
   - component: {fileID: 7047817430718585708}
-  - component: {fileID: 3285046736517432149}
-  - component: {fileID: 4906300661492547023}
   - component: {fileID: 4193112312619027109}
   - component: {fileID: 1917144439952450118}
+  - component: {fileID: 7130382897855629333}
+  - component: {fileID: 4555523228017314381}
+  - component: {fileID: 2278701803603547377}
   m_Layer: 8
   m_Name: Red Bat
   m_TagString: Enemy
@@ -156,38 +157,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.84375, y: 0.6875}
   m_EdgeRadius: 0
---- !u!114 &3285046736517432149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461759420925149495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8354af90658fa984495e7be309fc3bc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4906300661492547023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461759420925149495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae9deb745e878bb49a7f4732240fa7c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: dc468df2e32f5fe40bbcf0a13698706b, type: 2}
-  currentMoveSpeed: 0
-  currentHealth: 0
-  currentDamage: 0
-  despawnDistance: 20
-  damageColor: {r: 0, g: 0.48496294, b: 1, a: 1}
-  damageFlashDuration: 0.2
-  deathFadeTime: 0.6
 --- !u!114 &4193112312619027109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +199,55 @@ MonoBehaviour:
   - {x: 0.15328205, y: 0.07346439, z: 0}
   m_ShapePathHash: -110675927
   m_Mesh: {fileID: 0}
-  m_InstanceId: -140630
+  m_InstanceId: 182576
   m_LocalBounds:
     m_Center: {x: 0.010743707, y: 0.11012311, z: 0}
     m_Extent: {x: 0.14253834, y: 0.14588653, z: 0}
+--- !u!114 &7130382897855629333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461759420925149495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3dd88399274a144c9fef3a7bdd9b7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4555523228017314381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461759420925149495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e13413a2eb9d943a1881feb21ef44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2278701803603547377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461759420925149495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c9b0633c9d13149a186f12e790623a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 9d59beec65fb1b7419e7ee5e4c842c94, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  collisionDamage: 0
+  despawnDistance: 20
+  CollisionEnemy: 0
+  ShootingEnemy: 0
+  SummonerEnemy: 0
+  SplittingEnemy: 0
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.2
+  deathFadeTime: 0.6

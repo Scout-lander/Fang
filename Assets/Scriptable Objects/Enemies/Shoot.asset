@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ed538678a3dc74b887729c36da1554, type: 3}
+  m_Name: Shoot
+  m_EditorClassIdentifier: 
+  enemyType: 1
+  moveSpeed: 1
+  maxHealth: 15
+  collisionDamage: 10
+  knockbackDuration: 0.2
+  despawnDistance: 0
+  shootingDamage: 15
+  stoppingDistance: 0
+  shootingDistance: 5
+  projectilePrefab: {fileID: 536358626341996007, guid: def3eeea6a5e36e4791689ae780dc67c, type: 3}
+  projectileSpeed: 4
+  shootingCooldown: 1
+  numberOfSplits: 0
+  enemySplitPrefab: {fileID: 0}
+  enemyPrefabsToSummon: []
+  summonCooldown: 0
+  summoningDistance: 0
+  summoningDuration: 0
+  spawnOffsetDistance: 0
+  minSummonAmount: 1
+  maxSummonAmount: 3

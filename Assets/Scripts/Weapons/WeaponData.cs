@@ -9,7 +9,7 @@ public enum Rarity
     Legendary
 }
 
-[CreateAssetMenu(fileName = "Weapon Data", menuName = "Camlander/Weapon Data")]
+[CreateAssetMenu(fileName = "Weapon Data", menuName = "Charactor/Weapon Data")]
 public class WeaponData : ItemData
 {
     [HideInInspector] public string behaviour;

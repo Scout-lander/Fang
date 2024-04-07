@@ -84,13 +84,12 @@ public class Projectile : WeaponEffect
         }
     }
 
-        protected virtual void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         EnemyStats es = other.GetComponent<EnemyStats>();
         BreakableProps p = other.GetComponent<BreakableProps>();
-        ShootingEnemyData sed = other.GetComponent<ShootingEnemyData>(); // Add this line
 
-        // Only collide with enemies, shooting enemies, or breakable stuff.
+        // Only collide with enemies or breakable stuff.
         if (es)
         {
             // If there is an owner, and the damage source is set to owner,
@@ -99,36 +98,27 @@ public class Projectile : WeaponEffect
 
             // Deals damage and destroys the projectile.
             es.TakeDamage(GetDamage(), source);
-            HandleHitEffect();
 
+            Weapon.Stats stats = weapon.GetStats();
             piercing--;
-        }
-        else if (sed) // Add this condition
-        {
-            Vector3 source = damageSource == DamageSource.owner && owner ? owner.transform.position : transform.position;
-            sed.TakeDamage(GetDamage(), source);
-            HandleHitEffect();
-
-            piercing--;
+            if (stats.hitEffect)
+            {
+                Destroy(Instantiate(stats.hitEffect, transform.position, Quaternion.identity), 5f);
+            }
         }
         else if (p)
         {
             p.TakeDamage(GetDamage());
-            HandleHitEffect();
-
             piercing--;
+
+            Weapon.Stats stats = weapon.GetStats();
+            if (stats.hitEffect)
+            {
+                Destroy(Instantiate(stats.hitEffect, transform.position, Quaternion.identity), 5f);
+            }
         }
 
         // Destroy this object if it has run out of health from hitting other stuff.
         if (piercing <= 0) Destroy(gameObject);
-    }
-
-    private void HandleHitEffect()
-    {
-        Weapon.Stats stats = weapon.GetStats();
-        if (stats.hitEffect)
-        {
-            Destroy(Instantiate(stats.hitEffect, transform.position, Quaternion.identity), 5f);
-        }
     }
 }

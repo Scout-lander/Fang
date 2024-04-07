@@ -324,4 +324,38 @@ public class PlayerStats : MonoBehaviour
             }
         }
     }
+    [Header("Kill/Damage")]
+    public int killCount = 0;
+    public float totalDamageDone = 0;
+
+
+    // Method to increment the kill count
+    public void IncrementKillCount()
+    {
+        killCount++;
+        // Optionally, you can update UI or perform other actions related to the kill count here
+    }
+
+    // Method to get the current kill count
+    public int GetKillCount()
+    {
+        return killCount;
+    }
+    public void IncrementTotalDamageDone(float dmg)
+    {
+        totalDamageDone += dmg;
+    }
+
+    public string GetTotalDamageDoneFormatted()
+    {
+        if (totalDamageDone >= 1000)
+        {
+            float damageInK = totalDamageDone / 1000f;
+            return damageInK.ToString("0.00") + "k";
+        }
+        else
+        {
+            return totalDamageDone.ToString("0");
+        }
+    }
 }

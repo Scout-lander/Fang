@@ -57,6 +57,15 @@ public class GameManager : MonoBehaviour
     // Reference to the player's game object
     public GameObject playerObject;
 
+    [Header("Kills/Damage")]
+    public TMP_Text killCount;
+    public TMP_Text damage;
+    public TMP_Text DPS;
+    public float dps;
+    private PlayerStats playerStats;
+
+
+
     void Awake()
     {
         //Warning check to see if there is another singleton of this kind already in the game
@@ -112,6 +121,61 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        playerStats = FindObjectOfType<PlayerStats>(); // Find PlayerStats component at start
+        StartCoroutine(UpdateKillCountTextCoroutine()); // Start the coroutine to update kill count text
+        StartCoroutine(UpdateDamageTextCoroutine()); // Start the coroutine to update kill count text
+        StartCoroutine(UpdateDPSTextCoroutine()); // Start coroutine to update DPS text
+
+
+    }
+
+
+    public void UpdateDPS()
+    {
+        if (playerStats != null && stopwatchTime > 0)
+        {
+            dps = playerStats.totalDamageDone / stopwatchTime;
+            DPS.text = "DPS: " + dps.ToString("F2"); // Display DPS with 2 decimal places
+        }
+    }
+    // Method to update the kill count text
+    IEnumerator UpdateDamageTextCoroutine()
+    {
+        while (true) // Infinite loop to update the text every second
+        {
+            yield return new WaitForSeconds(1f); // Wait for one second
+
+            if (playerStats != null) // Check if PlayerStats component is not null
+            {
+                // Update the kill count text with the current kill count from PlayerStats
+                damage.text = "Damage: " + playerStats.GetTotalDamageDoneFormatted().ToString();
+            }
+        }
+    }
+    IEnumerator UpdateDPSTextCoroutine()
+{
+    while (true)
+    {
+        yield return new WaitForSeconds(1f); // Wait for one second
+
+        UpdateDPS(); // Update DPS text
+    }
+}
+    IEnumerator UpdateKillCountTextCoroutine()
+    {
+        while (true) // Infinite loop to update the text every second
+        {
+            yield return new WaitForSeconds(1f); // Wait for one second
+
+            if (playerStats != null) // Check if PlayerStats component is not null
+            {
+                // Update the kill count text with the current kill count from PlayerStats
+                killCount.text = "Kills: " + playerStats.GetKillCount().ToString();
+            }
+        }
+    }
     IEnumerator GenerateFloatingTextCoroutine(string text, Transform target, float duration = 1f, float speed = 50f)
     {
         // Start generating the floating text.
@@ -312,7 +376,6 @@ public class GameManager : MonoBehaviour
         // Update the stopwatch text to display the elapsed time
         stopwatchDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
-
     public void StartLevelUp()
     {
         ChangeState(GameState.LevelUp);

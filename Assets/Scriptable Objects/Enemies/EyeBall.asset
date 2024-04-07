@@ -9,9 +9,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef602b3d70fd29429478a222698ccca, type: 3}
-  m_Name: EyeBall
+  m_Script: {fileID: 11500000, guid: 40ed538678a3dc74b887729c36da1554, type: 3}
+  m_Name: Eyeball
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  maxHealth: 50
-  damage: 5
+  enemyType: 0
+  moveSpeed: 2.5
+  maxHealth: 25
+  collisionDamage: 9
+  knockbackDuration: 0.2
+  despawnDistance: 0
+  shootingDamage: 0
+  stoppingDistance: 0
+  shootingDistance: 0
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 10
+  shootingCooldown: 20
+  numberOfSplits: 0
+  enemySplitPrefab: {fileID: 0}
+  enemyPrefabsToSummon: []
+  summoningEffect: {fileID: 0}
+  summonCooldown: 0
+  summoningDistance: 0
+  summoningDuration: 0
+  spawnOffsetDistance: 0
+  minSummonAmount: 1
+  maxSummonAmount: 3

@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 461759420925149489}
   - component: {fileID: 461759420925149488}
   - component: {fileID: 7047817430718585708}
-  - component: {fileID: 3285046736517432149}
-  - component: {fileID: 4906300661492547023}
   - component: {fileID: 4193112312619027109}
   - component: {fileID: 1566264170482041902}
+  - component: {fileID: 2386190990366792695}
+  - component: {fileID: 8895038720997701676}
   m_Layer: 8
   m_Name: Bat
   m_TagString: Enemy
@@ -156,38 +156,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.84375, y: 0.6875}
   m_EdgeRadius: 0
---- !u!114 &3285046736517432149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461759420925149495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8354af90658fa984495e7be309fc3bc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4906300661492547023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461759420925149495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae9deb745e878bb49a7f4732240fa7c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: cd1c7c2e40e5c544686b63d3b176bc75, type: 2}
-  currentMoveSpeed: 0
-  currentHealth: 0
-  currentDamage: 0
-  despawnDistance: 20
-  damageColor: {r: 1, g: 0, b: 0, a: 1}
-  damageFlashDuration: 0.2
-  deathFadeTime: 0.6
 --- !u!114 &4193112312619027109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +198,39 @@ MonoBehaviour:
   - {x: 0.15149143, y: 0.09495184, z: 0}
   m_ShapePathHash: 39936199
   m_Mesh: {fileID: 0}
-  m_InstanceId: -139176
+  m_InstanceId: 41420
   m_LocalBounds:
     m_Center: {x: 0.0026859194, y: 0.111018434, z: 0}
     m_Extent: {x: 0.14880551, y: 0.15036306, z: 0}
+--- !u!114 &2386190990366792695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461759420925149495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3dd88399274a144c9fef3a7bdd9b7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8895038720997701676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461759420925149495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c9b0633c9d13149a186f12e790623a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 292f190899085024fbd3e84e278f8e2c, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  collisionDamage: 0
+  despawnDistance: 20
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damageFlashDuration: 0.2
+  deathFadeTime: 0.6

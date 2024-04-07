@@ -6,7 +6,7 @@ using UnityEngine;
 /// a single passive item, which is what we would have had to do if we continued using 
 /// PassiveItemScriptableObject.
 /// </summary>
-[CreateAssetMenu(fileName = "Passive Data", menuName = "Camlander/Passive Data")]
+[CreateAssetMenu(fileName = "Passive Data", menuName = "Charactor/Passive Data")]
 public class PassiveData : ItemData
 {
     public Passive.Modifier baseStats;
