@@ -244,7 +244,10 @@ MonoBehaviour:
   CollisionEnemy: 0
   ShootingEnemy: 0
   SummonerEnemy: 0
+  summoningEffect: {fileID: 0}
   SplittingEnemy: 0
+  splittingEffect: {fileID: 0}
+  DashEnemy: 0
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6

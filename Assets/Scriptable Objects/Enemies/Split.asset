@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 2
   moveSpeed: 2
-  maxHealth: 20
+  maxHealth: 10
   collisionDamage: 10
   knockbackDuration: 0.2
   despawnDistance: 0
@@ -24,13 +24,20 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   projectileSpeed: 10
   shootingCooldown: 20
-  numberOfSplits: 2
-  enemySplitPrefab: {fileID: 461759420925149495, guid: 69403e684532f8a4094fd87c16a70679, type: 3}
+  numberOfSplits: 4
+  enemySplitPrefab: {fileID: 461759420925149495, guid: 97e28e9688747e344929463e83061623, type: 3}
   enemyPrefabsToSummon: []
-  summoningEffect: {fileID: 0}
   summonCooldown: 0
   summoningDistance: 0
   summoningDuration: 0
   spawnOffsetDistance: 0
   minSummonAmount: 1
   maxSummonAmount: 3
+  chargingDistance: 10
+  pauseDuration: 1
+  increasedSpeed: 20
+  chargeDuration: 2
+  chargeCooldown: 5
+  dashDistance: 0
+  dashSpeed: 0
+  dashCooldown: 0

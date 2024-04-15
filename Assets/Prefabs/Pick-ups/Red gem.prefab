@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -7358084886543197530}
   - component: {fileID: 8985141329276902312}
   - component: {fileID: 339942353846883853}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red gem
   m_TagString: Prop
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2408722251607916355}
   - component: {fileID: 6800718196056250601}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

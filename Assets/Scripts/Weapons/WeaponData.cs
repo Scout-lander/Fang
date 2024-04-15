@@ -1,23 +1,17 @@
 using UnityEngine;
 
-public enum Rarity
-{
-    Common,
-    Uncommon,
-    Rare,
-    Mythic,
-    Legendary
-}
-
-[CreateAssetMenu(fileName = "Weapon Data", menuName = "Charactor/Weapon Data")]
+/// <summary>
+/// Replacement for the WeaponScriptableObject class. The idea is we want to store all weapon evolution
+/// data in one single object, instead of having multiple objects to store a single weapon, which is
+/// what we would have had to do if we continued using WeaponScriptableObject.
+/// </summary>
+[CreateAssetMenu(fileName = "Weapon Data", menuName = "2D Top-down Rogue-like/Weapon Data")]
 public class WeaponData : ItemData
 {
     [HideInInspector] public string behaviour;
     public Weapon.Stats baseStats;
     public Weapon.Stats[] linearGrowth;
-    public RandomGrowthEntry[] randomGrowth;
-    public Weapon.Stats currentWeapon; // Assign the current weapon instance in your game
-
+    public Weapon.Stats[] randomGrowth;
 
     // Gives us the stat growth / description of the next level.
     public Weapon.Stats GetLevelData(int level)
@@ -26,60 +20,13 @@ public class WeaponData : ItemData
         if (level - 2 < linearGrowth.Length)
             return linearGrowth[level - 2];
 
-        // Generate a random number between 0 and 100
-        int randomNumber = Random.Range(0, 100);
-
-        // Select a rarity based on random number and percentage chance
-        foreach (RandomGrowthEntry entry in randomGrowth)
-        {
-            if (randomNumber < entry.percentageChanceOfRarity)
-            {
-                return entry.stats;
-            }
-            else
-            {
-                randomNumber -= entry.percentageChanceOfRarity;
-            }
-        }
+        // Otherwise, pick one of the stats from the random growth array.
+        if (randomGrowth.Length > 0)
+            return randomGrowth[Random.Range(0, randomGrowth.Length)];
 
         // Return an empty value and a warning.
-        Debug.LogWarning("Weapon doesn't have its level up stats configured for Level " + level + "!");
+        Debug.LogWarning(string.Format("Weapon doesn't have its level up stats configured for Level {0}!",level));
         return new Weapon.Stats();
     }
-}
 
-[System.Serializable]
-public class RandomGrowthEntry
-{
-    public Rarity rarity;
-    public Weapon.Stats stats;
-    [Range(0, 100)]
-    public int percentageChanceOfRarity; // Percentage chance for this rarity
-
-    // Constructor to set default percentage chances
-    public RandomGrowthEntry()
-    {
-        // Set default percentage chances
-        switch (rarity)
-        {
-            case Rarity.Common:
-                percentageChanceOfRarity = 75;
-                break;
-            case Rarity.Uncommon:
-                percentageChanceOfRarity = 30;
-                break;
-            case Rarity.Rare:
-                percentageChanceOfRarity = 10;
-                break;
-            case Rarity.Mythic:
-                percentageChanceOfRarity = 5;
-                break;
-            case Rarity.Legendary:
-                percentageChanceOfRarity = 1;
-                break;
-            default:
-                percentageChanceOfRarity = 100;
-                break;
-        }
-    }
 }

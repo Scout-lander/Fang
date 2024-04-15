@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d531c6a981a4bbf4a9fbbeb73cb20eca, type: 3}
   m_Name: Duplicator
   m_EditorClassIdentifier: 
-  icon: {fileID: 961114043, guid: 5666fd68fbba8e941b3724f8e08e10d9, type: 3}
+  icon: {fileID: -599183092998106742, guid: 9a4fc81d095024a48880d86a3c54f2b7, type: 3}
   maxLevel: 5
   evolutionData:
   - name: Soul Eater
@@ -45,11 +45,8 @@ MonoBehaviour:
       curse: 0
       magnet: 0
       revival: 0
-      dashSpeed: 0
-      dashDuration: 0
-      dashCooldown: 0
   growth:
-  - name: Duplicator Level 2
+  - name: Level 2
     description: Increases projectiles fired by 1.
     boosts:
       maxHealth: 0
@@ -68,10 +65,7 @@ MonoBehaviour:
       curse: 0
       magnet: 0
       revival: 0
-      dashSpeed: 0
-      dashDuration: 0
-      dashCooldown: 0
-  - name: Duplicator Level 3
+  - name: Level 3
     description: Increases projectiles fired by 1.
     boosts:
       maxHealth: 0
@@ -90,10 +84,7 @@ MonoBehaviour:
       curse: 0
       magnet: 0
       revival: 0
-      dashSpeed: 0
-      dashDuration: 0
-      dashCooldown: 0
-  - name: Duplicator Level 4
+  - name: Level 4
     description: Increases projectiles fired by 1.
     boosts:
       maxHealth: 0
@@ -112,10 +103,7 @@ MonoBehaviour:
       curse: 0
       magnet: 0
       revival: 0
-      dashSpeed: 0
-      dashDuration: 0
-      dashCooldown: 0
-  - name: Duplicator Level 5
+  - name: Level 5
     description: Increases projectiles fired by 1.
     boosts:
       maxHealth: 0
@@ -134,6 +122,3 @@ MonoBehaviour:
       curse: 0
       magnet: 0
       revival: 0
-      dashSpeed: 0
-      dashDuration: 0
-      dashCooldown: 0

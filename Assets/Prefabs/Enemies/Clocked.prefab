@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1566264170482041902}
   - component: {fileID: 1413921287055594257}
   - component: {fileID: 8513630023251147163}
+  - component: {fileID: 5913044076256880953}
   m_Layer: 8
   m_Name: Clocked
   m_TagString: Enemy
@@ -231,8 +232,25 @@ MonoBehaviour:
   currentHealth: 0
   collisionDamage: 0
   despawnDistance: 20
-  canSplitOnDeath: 0
-  enemySplitPrefab: {fileID: 0}
+  CollisionEnemy: 0
+  ShootingEnemy: 0
+  SummonerEnemy: 0
+  summoningEffect: {fileID: 0}
+  SplittingEnemy: 0
+  splittingEffect: {fileID: 0}
+  DashEnemy: 0
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6
+--- !u!114 &5913044076256880953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461759420925149495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e13413a2eb9d943a1881feb21ef44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

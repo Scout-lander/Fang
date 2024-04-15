@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public const float DEFAULT_MOVESPEED = 5f;
-    //Movement
 
+    //Movement
     [HideInInspector]
     public Vector2 moveDir;
     [HideInInspector]
@@ -18,17 +18,27 @@ public class PlayerMovement : MonoBehaviour
     public float lastVerticalVector;
     [HideInInspector]
     public Vector2 lastMovedVector;
+    private bool movementLocked = false;
     
+    // Dashing
     bool Dashing;
     bool isDashing;
     bool canDash;
-    UnityEngine.Animation anim;
+    private float dashSpeed;
+    private float SBuff;
+
+    // Stun
+    public bool isStunned;
+    public bool canBeStunned = true;
+    public ParticleSystem stunParticles; // Reference to the particle system
+
+
     //References
+    UnityEngine.Animation anim;
     Animator am;
     Rigidbody2D rb;
     PlayerStats player;
-    private float dashSpeed;
-    private float SBuff;
+
 
     void Start()
     {
@@ -50,7 +60,8 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        Move();
+        if (!isStunned && !isDashing)
+            Move();
     }
 
     void InputManagement()
@@ -60,10 +71,9 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if(isDashing)
-        {
+        if (isStunned || isDashing)
             return;
-        }
+
 
         if(Input.GetKeyDown(KeyCode.Space) && canDash)
         {
@@ -114,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if(isDashing)
+        if(isDashing || isStunned)
         {
             return;
         }
@@ -154,5 +164,65 @@ public class PlayerMovement : MonoBehaviour
     public void DeactiveSpeedBuff()
     {
         rb.velocity = new Vector2(moveDir.x * player.Stats.moveSpeed / SBuff, moveDir.y * player.Stats.moveSpeed / SBuff);
+    }
+
+    public void LockMovement(bool lockMovement)
+    {
+        movementLocked = lockMovement;
+        if (lockMovement)
+        {
+            // Freeze movement along all axes (X, Y, and rotation around the Z-axis)
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        else
+        {
+            // Unfreeze movement along all axes
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+    }
+
+    public void Knockback(Vector2 direction, float force)
+    {
+        rb.velocity = Vector2.zero;
+        rb.AddForce(direction * force, ForceMode2D.Impulse);
+    }
+
+    public IEnumerator ApplyKnockback(Vector2 direction, float force, float duration)
+    {
+        Knockback(direction, force); // Apply knockback
+        yield return new WaitForSeconds(duration);
+        rb.velocity = Vector2.zero; // Reset velocity after duration
+    }
+
+    public IEnumerator ApplyStun(Vector2 sourcePosition, float knockbackForce, float knockbackDuration)
+    {
+        if (!isStunned && canBeStunned)
+        { Debug.Log("Stunning player");
+
+            isStunned = true;
+            canBeStunned = false;
+            am.SetBool("Stunned", true);
+
+            // Activate stun particles
+            Knockback(((Vector2)transform.position - sourcePosition).normalized * knockbackForce, 0.3f);
+            yield return new WaitForSeconds(0.25f);
+
+            //if (stunParticles) Destroy(Instantiate(stunParticles, transform.position, Quaternion.identity), 1f);
+            if (stunParticles != null)
+            {
+                GameObject instantiatedParticles = Instantiate(stunParticles.gameObject, transform.position, Quaternion.identity);
+                Destroy(instantiatedParticles, 2f);
+            }
+
+            LockMovement(true);
+            yield return new WaitForSeconds(2); //How Long the stun lasts
+
+            am.SetBool("Stunned", false);
+            isStunned = false;
+            LockMovement(false);
+
+            yield return new WaitForSeconds(4); //How long until you can be Stunned again
+            canBeStunned = true;
+        }
     }
 }

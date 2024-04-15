@@ -7,7 +7,7 @@ public class UIStatDisplay : MonoBehaviour
 {
 
     public PlayerStats player; // The player that this stat display is rendering stats for.
-    public bool displayCurrentHealth = true;
+    public bool displayCurrentHealth = false;
     public bool updateInEditor = false;
     TextMeshProUGUI statNames, statValues;
 

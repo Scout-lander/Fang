@@ -84,13 +84,13 @@ public class DrunkSystem : MonoBehaviour
         {
             drunkParticle.Play();
             // Add Drunk buff here when drunk state is activated
-            player.AddBuff(drunkBuffData);
+            //player.AddBuff(drunkBuffData);
         }
         else
         {
             drunkParticle.Stop();
             // Remove Drunk buff here when drunk state is deactivated
-            player.RemoveBuff(drunkBuffData);
+            //player.RemoveBuff(drunkBuffData);
         }
     }
 

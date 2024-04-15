@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 461759420925149488}
   - component: {fileID: 7047817430718585708}
   - component: {fileID: 4193112312619027109}
-  - component: {fileID: 1566264170482041902}
-  - component: {fileID: 2386190990366792695}
-  - component: {fileID: 8895038720997701676}
+  - component: {fileID: 8908309681302815833}
+  - component: {fileID: 8281645808247400422}
+  - component: {fileID: 8218410819175588748}
   m_Layer: 8
   m_Name: Bat
   m_TagString: Enemy
@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,37 +172,7 @@ MonoBehaviour:
   - name: Blue gem
     itemPrefab: {fileID: 3322201518369577180, guid: b4b6f1c086abc4e4fa68fe184495f0cc, type: 3}
     dropRate: 100
---- !u!114 &1566264170482041902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461759420925149495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_ComponentVersion: 1
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000a3d08871511419cbc9dadd2a51d1a66851176219d5748f01
-  m_ShapePath:
-  - {x: 0.0025018528, y: -0.039344627, z: 0}
-  - {x: -0.1461196, y: 0.098435074, z: 0}
-  - {x: 0.0046606176, y: 0.26138148, z: 0}
-  - {x: 0.15149143, y: 0.09495184, z: 0}
-  m_ShapePathHash: 39936199
-  m_Mesh: {fileID: 0}
-  m_InstanceId: 41420
-  m_LocalBounds:
-    m_Center: {x: 0.0026859194, y: 0.111018434, z: 0}
-    m_Extent: {x: 0.14880551, y: 0.15036306, z: 0}
---- !u!114 &2386190990366792695
+--- !u!114 &8908309681302815833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,7 +184,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3dd88399274a144c9fef3a7bdd9b7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8895038720997701676
+--- !u!114 &8281645808247400422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461759420925149495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e13413a2eb9d943a1881feb21ef44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8218410819175588748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,7 +212,24 @@ MonoBehaviour:
   currentMoveSpeed: 0
   currentHealth: 0
   collisionDamage: 0
-  despawnDistance: 20
+  despawnDistance: 40
+  CollisionEnemy: 0
+  ShootingEnemy: 0
+  SummonerEnemy: 0
+  summoningEffect: {fileID: 0}
+  SplittingEnemy: 0
+  splittingEffect: {fileID: 0}
+  DashEnemy: 0
+  ExplodingEnemy: 0
+  explosionRadius: 3
+  explosionStartDistance: 6
+  explosionDamage: 15
+  movementSpeedIncrease: 3
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.2
+  explosionDuration: 4
+  spiralRadiusIncreaseRate: 0.1
+  explodingEffect: {fileID: 0}
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6

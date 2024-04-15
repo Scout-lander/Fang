@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0fdc727e51c2a488209e36cfcb8297, type: 3}
   m_Name: Garlic
   m_EditorClassIdentifier: 
-  icon: {fileID: -5044664615930318519, guid: d3044741a5868fa4eba95b098108e7b9, type: 3}
+  icon: {fileID: -1263851060, guid: 435fbe1d370b7e548a712ed9e202991e, type: 3}
   name: Garlic
   startingWeapon: {fileID: 11400000, guid: cdb9c796504291948ab0842772349798, type: 2}
   stats:
@@ -30,8 +30,10 @@ MonoBehaviour:
     growth: 1
     greed: 1
     curse: 1
+    dashDuration: 0.25
     magnet: 2
     revival: 0
-    dashSpeed: 20
-    dashDuration: 0.25
     dashCooldown: 5
+    maxDrunk: 100
+    drunkAutoRegen: 5
+    soberRate: 25

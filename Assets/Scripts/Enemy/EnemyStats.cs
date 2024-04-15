@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(EnemyMovement))]
-[RequireComponent(typeof(EnemyAnimator))]
 public class EnemyStats : MonoBehaviour
 {
     public EnemyScriptableObject enemyData;
@@ -14,7 +12,7 @@ public class EnemyStats : MonoBehaviour
     public float currentHealth;
     public float collisionDamage;
     public float despawnDistance = 20f;
-    protected Transform player;
+    
     public bool CollisionEnemy = false;
 
     // Shooting variables
@@ -37,27 +35,59 @@ public class EnemyStats : MonoBehaviour
     protected float summonCooldown;
     protected float cooldownTimer = 0f;
     protected Coroutine summonCoroutine;
-    protected ParticleSystem summoningEffect;
+    public ParticleSystem summoningEffect;
+
     // Splitting variables
     public bool SplittingEnemy = false;
-    protected float spawnOffsetDistance = .5f;
+    protected float spawnOffsetDistance = .8f;
     protected int numberOfSplits; // Number of splits to spawn on kill
     protected bool canSplitOnDeath = false; // Boolean to enable splitting on death
     protected GameObject enemySplitPrefab;
+    public GameObject splittingEffect;
+
+    // Dash variables
+    public bool DashEnemy = false;
+    protected float dashDistance;
+    protected float dashSpeed;
+    protected float dashCooldown;
+    protected bool canDash = true;
+    protected bool isCharging = false;
+    protected Coroutine dashCoroutine;
+
+    // Exploding variables
+    public bool ExplodingEnemy = false;
+    protected float explosionRadius = 3f;
+    protected float explosionStartDistance = 6f;
+    protected float explosionDamage = 15f;
+    protected float movementSpeedIncrease = 3f;
+    protected Color flashColor = new Color(1,0,0,1);
+    protected float flashDuration = 0.2f;
+    protected float explosionDuration = 4f;
+    protected float spiralRadiusIncreaseRate = 0.1f;
+    protected bool isExploding = false;
+    public ParticleSystem explodingEffect;
+
+    // Ball Enemy
+    public  bool BallEnemy = false;
+    protected Vector2 initialMovementDirection; // Store the initial movement direction for BallEnemy
 
     [Header("Damage Feedback")]
     public Color damageColor = new Color(1,0,0,1); // What the color of the damage flash should be.
     public float damageFlashDuration = 0.2f; // How long the flash should last.
     public float deathFadeTime = 0.6f; // How much time it takes for the enemy to fade.
+
+    ////////////////////
     Color originalColor;
     SpriteRenderer sr;
     PlayerStats playerStats;
     protected  Animator animator;
     EnemyMovement movement;
+    PlayerMovement playerMovement;
+    protected Transform player;
 
     protected virtual void InitializeEnemy()
     {
-            Debug.Log("Initializing enemy: " + enemyData.enemyType); // Add this line for debugging
+            Debug.Log("Initializing enemy: " + enemyData.enemyType); // Line for debugging
 
         // Initialize enemy based on stats
         // You can add more initialization logic here
@@ -74,10 +104,10 @@ public class EnemyStats : MonoBehaviour
                 shootingDistance = enemyData.ShootingDistance;
                 shootingCooldown = enemyData.ShootingCooldown;
                 stoppingDistance = enemyData.StoppingDistance;
-
                 canShoot = true;
                 shootingCoroutine = StartCoroutine(ShootCoroutine());
                 break;
+
             case EnemyType.SummonerEnemy:
                 // Initialize summoning enemy
                 SummonerEnemy = true;
@@ -85,11 +115,31 @@ public class EnemyStats : MonoBehaviour
                 summonCooldown = enemyData.SummonCooldown;
                 summonCoroutine = StartCoroutine(SummonEnemies());
                 break;
+
             case EnemyType.SplittingEnemy:
                 // Initialize splitting enemy
                 SplittingEnemy = true;
                 canSplitOnDeath = true;
-                spawnOffsetDistance = enemyData.SpawnOffsetDistance;
+                numberOfSplits = enemyData.numberOfSplits;
+                break;
+
+            case EnemyType.DashEnemy:
+                // Initialize dash enemy
+                DashEnemy = true;
+                dashDistance = enemyData.DashDistance;
+                dashSpeed = enemyData.DashSpeed;
+                dashCooldown = enemyData.DashCooldown;
+                break;
+
+             case EnemyType.ExplodingEnemy:
+                // Initialize exploding enemy
+                ExplodingEnemy = true;
+                summonCoroutine = StartCoroutine(ExplodeCoroutine());
+                break;
+            
+            case EnemyType.BallEnemy:
+                // Initialize BallEnemy
+                BallEnemy = true;
                 break;
             default:
                 break;
@@ -108,6 +158,12 @@ public class EnemyStats : MonoBehaviour
     {
         // Call InitializeEnemy() to set up enemy-specific properties
         InitializeEnemy();
+        player = FindObjectOfType<PlayerStats>()?.transform;
+        if (player == null)
+        {
+            Debug.LogError("Player not found.");
+            return;
+        }
 
         player = FindObjectOfType<PlayerStats>().transform;
         playerStats = FindObjectOfType<PlayerStats>();
@@ -116,15 +172,43 @@ public class EnemyStats : MonoBehaviour
         animator = GetComponent<Animator>();
 
         movement = GetComponent<EnemyMovement>();
+        playerMovement = GetComponent<PlayerMovement>();
     
+        if (DashEnemy)
+        {
+            // Start checking for dashing conditions
+            StartCoroutine(CheckDashConditions());
+        }
     }
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.position) >= despawnDistance)
+        if (player != null && !BallEnemy && Vector2.Distance(transform.position, player.position) >= despawnDistance)
         {
             ReturnEnemy();
         }
+
+        // Only perform despawn check for BallEnemy
+        if (BallEnemy && player != null && Vector2.Distance(transform.position, player.position) >= despawnDistance)
+        {
+            Destroy(gameObject); // Destroy the BallEnemy when it reaches the despawn distance
+        }
+
+        if (BallEnemy && player != null)
+        {
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+            //Debug.Log("Distance to player: " + distanceToPlayer);
+            if (distanceToPlayer >= despawnDistance)
+            {
+                Debug.Log("Despawning BallEnemy");
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    public Vector2 GetInitialMovementDirection()
+    {
+        return initialMovementDirection;
     }
 
     // This function always needs at least 2 values, the amount of damage dealt <dmg>, as well as where the damage is
@@ -170,13 +254,13 @@ public class EnemyStats : MonoBehaviour
         // Instantiate multiple enemies at random positions near the current position if splitting on death is enabled
         if (canSplitOnDeath)
         {
-            Vector3 currentPosition = transform.position;
-            for (int i = 0; i < 2; i++)
+            if (splittingEffect != null)
             {
-                Vector3 offset = Random.insideUnitCircle.normalized * spawnOffsetDistance;
-                Instantiate(enemyData.enemySplitPrefab, currentPosition + offset, Quaternion.identity);
-            }
-        }
+                Vector3 Position = transform.position; // Store the position where the enemy will split
+                Instantiate(splittingEffect, Position, Quaternion.identity);
+            } 
+            StartCoroutine(SpawnEnemiesWithDelay());
+        } 
 
         StartCoroutine(KillFade());
         playerStats.IncrementKillCount(); // Increment kill count when enemy is killed.
@@ -204,11 +288,40 @@ public class EnemyStats : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D col)
     {
+        if (col.gameObject.CompareTag("Player") && ExplodingEnemy && isExploding)
+        {
+            Explode();
+        }
         //Reference the script from the collided collider and deal damage using TakeDamage()
         if (col.gameObject.CompareTag("Player"))
         {
             PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
             player.TakeDamage(collisionDamage); // Make sure to use currentDamage instead of weaponData.Damage in case any damage multipliers in the future
+        }
+
+        //Reference the script from the collided collider and deal damage using TakeDamage()
+        if (col.gameObject.CompareTag("Player") && DashEnemy && isCharging)
+        {
+            // Get the PlayerMovement component from the collided player object
+            PlayerMovement playerMovement = col.gameObject.GetComponent<PlayerMovement>();
+
+            // Apply stun and knockback to the player
+            Vector2 sourcePosition = transform.position; // The position of the enemy causing the stun
+            float knockbackForce = 35f; // Adjust as needed
+            float knockbackDuration = 0.3f; // Adjust as needed
+            StartCoroutine(playerMovement.ApplyStun(sourcePosition, knockbackForce, knockbackDuration));
+        }
+    }
+
+    public void HandleBallEnemyDespawn()
+    {
+        if (player != null)
+        {
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+            if (distanceToPlayer >= despawnDistance)
+            {
+                Destroy(gameObject); // Destroy the BallEnemy when it reaches the despawn distance
+            }
         }
     }
 
@@ -227,7 +340,7 @@ public class EnemyStats : MonoBehaviour
 
 ///////////////////// ShootingEnemy ///////////////////////////
     protected IEnumerator ShootCoroutine()
-    { Debug.Log("Starting Shooting"); // Add this line for debugging
+    { Debug.Log("Starting Shooting"); // Line for debugging
         while (true)
         {
             yield return new WaitForSeconds(shootingCooldown);
@@ -278,6 +391,11 @@ public class EnemyStats : MonoBehaviour
             isSummoning = true;
             isOnCooldown = true; // Start cooldown
             animator.SetBool("Summoning", true); // Set the "Summoning" bool to true
+            if (summoningEffect != null)
+            {
+                Vector3 Position = transform.position; // Store the position where the enemy will split
+                Instantiate(summoningEffect, Position, Quaternion.identity);
+            }
             PauseMovement(true); // Pause movement while summoning
             yield return new WaitForSeconds(summoningDuration);
             SpawnEnemies();
@@ -323,4 +441,167 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
+/////////////////////////ChargerEnmey///////////////////////
+ // Check conditions for dashing
+    private IEnumerator CheckDashConditions()
+    {
+        while (true)
+        {
+            // Check if the player is within dash distance
+            if (Vector2.Distance(transform.position, player.position) <= dashDistance && canDash)
+            {
+                // Start the dash coroutine
+                StartCoroutine(Dash());
+            }
+            yield return null;
+        }
+    }
+
+    // Dash coroutine
+    protected IEnumerator Dash()
+    {
+        isCharging = true;
+        canDash = false; // Disable dashing until cooldown
+
+        // Stop movement and trigger dash animation
+        animator.SetBool("Dash", true);
+        PauseMovement(true);
+
+        // Wait for pause duration before dashing
+        yield return new WaitForSeconds(0.4f);
+
+        Vector3 targetPosition = player.position;
+        Vector3 direction = (targetPosition - transform.position).normalized;
+        float distanceRemaining = dashDistance;
+
+        while (distanceRemaining > 0)
+        {
+            // Move towards the player at dash speed
+            transform.position += direction * dashSpeed * Time.deltaTime;
+            distanceRemaining -= dashSpeed * Time.deltaTime;
+            yield return null;
+        }
+
+        // Stop dash animation and resume movement
+        animator.SetBool("Dash", false);
+        isCharging = false;
+        PauseMovement(false);
+
+        // Wait for dash cooldown
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true; // Enable dashing again
+    }
+
+/////////////////////////SplittingEnemy///////////////////////
+    IEnumerator SpawnEnemiesWithDelay()
+    {
+        //Debug.Log("Starting Splittting"); // Line for debugging
+        yield return new WaitForSeconds(.5f);
+           
+        Vector3 currentPosition = transform.position;
+        for (int i = 0; i < numberOfSplits; i++)
+        {
+            Vector3 offset = Random.insideUnitSphere.normalized * spawnOffsetDistance;
+            Vector3 spawnPosition = currentPosition + offset;
+            //Debug.Log("Spawn Position: " + spawnPosition); // Print spawn position for debugging
+            Instantiate(enemyData.enemySplitPrefab, spawnPosition, Quaternion.identity);
+            
+        }
+    }
+
+/////////////////////////ExplodingEnemy///////////////////////
+    IEnumerator ExplodeCoroutine()
+    {
+        while (true)
+        {
+            yield return null;
+
+            if (!isExploding && Vector2.Distance(transform.position, player.position) <= explosionStartDistance)
+            {
+                isExploding = true;
+                
+                // Increase movement speed and move pattern
+                currentMoveSpeed += movementSpeedIncrease;
+                MoveInSpiralPattern();
+
+                // Flash color
+                StartCoroutine(FlashColor());
+
+                // Wait for flash duration
+                yield return new WaitForSeconds(explosionDuration);
+
+                // Explode
+                Explode();
+                
+                // Destroy the enemy
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    IEnumerator FlashColor()
+    {
+        float originalFlashDuration = flashDuration;
+        Color originalColor = sr.color;
+        Color currentColor = originalColor;
+        Color targetColor = flashColor;
+        float timeInterval = 0.5f; // Initial time interval between color changes
+        float speedUpInterval = 2f; // Time interval after which the flashing speeds up
+        float timeElapsed = 0f;
+
+        while (true)
+        {
+            // Alternate between the two colors
+            if (currentColor == originalColor)
+                currentColor = flashColor;
+            else
+                currentColor = originalColor;
+
+            // Apply the current color
+            sr.color = currentColor;
+
+            // Decrease wait time between color changes gradually to speed up the flashing
+            yield return new WaitForSeconds(timeInterval);
+
+            timeElapsed += timeInterval;
+
+            // Speed up the flashing after a certain interval
+            if (timeElapsed >= speedUpInterval)
+            {
+                timeInterval /= 2.4f; // Reduce the time interval by half to speed up flashing
+                timeElapsed = 0f; // Reset the time elapsed
+            }
+        }
+    }
+
+    void Explode()
+    {
+        if (explodingEffect != null)
+        {
+            Vector3 Position = transform.position; // Store the position where the enemy will split
+            Instantiate(explodingEffect, Position, Quaternion.identity);
+        }
+        // Deal damage to nearby objects within explosion radius
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.CompareTag("Player"))
+            {
+                collider.GetComponent<PlayerStats>().TakeDamage(explosionDamage);
+            }
+        }
+        Destroy(gameObject);
+    }
+
+    void MoveInSpiralPattern()
+    {
+        // Calculate direction towards the player
+        Vector3 directionToPlayer = (player.position - transform.position).normalized;
+
+        // Move towards the player in a spiral pattern
+        transform.position += directionToPlayer * spiralRadiusIncreaseRate * Time.deltaTime;
+
+        // Rotate towards the player
+        transform.RotateAround(player.position, Vector3.forward, Time.deltaTime * 30f);
+    }
 }

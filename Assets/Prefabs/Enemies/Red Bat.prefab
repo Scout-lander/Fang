@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 461759420925149488}
   - component: {fileID: 7047817430718585708}
   - component: {fileID: 4193112312619027109}
-  - component: {fileID: 1917144439952450118}
-  - component: {fileID: 7130382897855629333}
-  - component: {fileID: 4555523228017314381}
-  - component: {fileID: 2278701803603547377}
+  - component: {fileID: 9210303227955323949}
+  - component: {fileID: 5850183553373583130}
+  - component: {fileID: 5334267065568690819}
   m_Layer: 8
   m_Name: Red Bat
   m_TagString: Enemy
@@ -59,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -173,37 +172,7 @@ MonoBehaviour:
   - name: Blue gem
     itemPrefab: {fileID: 3322201518369577180, guid: b4b6f1c086abc4e4fa68fe184495f0cc, type: 3}
     dropRate: 50
---- !u!114 &1917144439952450118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461759420925149495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_ComponentVersion: 1
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000a3d08871511419cbc9dadd2a51d1a66851176219d5748f01
-  m_ShapePath:
-  - {x: 0.0025018752, y: -0.035763413, z: 0}
-  - {x: -0.13179463, y: 0.08948201, z: 0}
-  - {x: 0.004660599, y: 0.25600964, z: 0}
-  - {x: 0.15328205, y: 0.07346439, z: 0}
-  m_ShapePathHash: -110675927
-  m_Mesh: {fileID: 0}
-  m_InstanceId: 182576
-  m_LocalBounds:
-    m_Center: {x: 0.010743707, y: 0.11012311, z: 0}
-    m_Extent: {x: 0.14253834, y: 0.14588653, z: 0}
---- !u!114 &7130382897855629333
+--- !u!114 &9210303227955323949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3dd88399274a144c9fef3a7bdd9b7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4555523228017314381
+--- !u!114 &5850183553373583130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e13413a2eb9d943a1881feb21ef44f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2278701803603547377
+--- !u!114 &5334267065568690819
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,7 +216,10 @@ MonoBehaviour:
   CollisionEnemy: 0
   ShootingEnemy: 0
   SummonerEnemy: 0
+  summoningEffect: {fileID: 0}
   SplittingEnemy: 0
+  splittingEffect: {fileID: 0}
+  DashEnemy: 0
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6

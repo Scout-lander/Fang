@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 6775654516889758203}
   - component: {fileID: 2486596383588869996}
   - component: {fileID: 2541840087473203657}
+  - component: {fileID: 7878863097596638572}
   m_Layer: 8
   m_Name: ghost-Halo
   m_TagString: Enemy
@@ -314,8 +315,25 @@ MonoBehaviour:
   currentHealth: 0
   collisionDamage: 0
   despawnDistance: 20
-  canSplitOnDeath: 0
-  enemySplitPrefab: {fileID: 461759420925149495, guid: 69403e684532f8a4094fd87c16a70679, type: 3}
+  CollisionEnemy: 0
+  ShootingEnemy: 0
+  SummonerEnemy: 0
+  summoningEffect: {fileID: 0}
+  SplittingEnemy: 0
+  splittingEffect: {fileID: 5137123306192418792, guid: 5a8d99fb95262ea458a7b580f2a1611c, type: 3}
+  DashEnemy: 0
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6
+--- !u!114 &7878863097596638572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9055450669508452473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e13413a2eb9d943a1881feb21ef44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

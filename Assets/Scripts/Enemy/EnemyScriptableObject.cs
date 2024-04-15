@@ -5,7 +5,11 @@ public enum EnemyType
     CollisionEnemy,
     ShootingEnemy,
     SplittingEnemy,
-    SummonerEnemy
+    SummonerEnemy,
+    ChargingEnemy,
+    DashEnemy,
+    ExplodingEnemy,
+    BallEnemy
 }
 
 [CreateAssetMenu(fileName = "AllEnemyScriptableObject", menuName = "Enemy/Enemy")]
@@ -61,7 +65,6 @@ public class EnemyScriptableObject : ScriptableObject
 
 //SummonerEnemy
     public GameObject[] enemyPrefabsToSummon; // List of enemy prefabs to spawn
-    public ParticleSystem summoningEffect;
 
     [SerializeField]
     public float summonCooldown = 6f;
@@ -80,5 +83,54 @@ public class EnemyScriptableObject : ScriptableObject
     public int minSummonAmount = 1; // Minimum number of enemies to spawn
     public int maxSummonAmount = 3; // Maximum number of enemies to spawn
 
+ //ChargingEnemy
+    [SerializeField] internal float chargingDistance = 10f;
+    public float ChargingDistance => chargingDistance;
 
+    [SerializeField] internal float pauseDuration = 1f;
+    public float PauseDuration => pauseDuration;
+
+    [SerializeField] internal float increasedSpeed = 20f;
+    public float IncreasedSpeed => increasedSpeed;
+
+    [SerializeField] internal float chargeDuration = 2f;
+    public float ChargeDuration => chargeDuration;
+
+    [SerializeField] internal float chargeCooldown = 5f;
+    public float ChargeCooldown => chargeCooldown;    
+
+// DashEnemy properties
+    [SerializeField] internal float dashDistance;
+    public float DashDistance => dashDistance;
+
+    [SerializeField] internal float dashSpeed;
+    public float DashSpeed => dashSpeed;
+
+    [SerializeField] internal float dashCooldown;
+    public float DashCooldown => dashCooldown;
+
+// ExplodingEnemy
+    [SerializeField] internal float explosionRadius = 3f; // Radius of explosion
+    public float ExplosionRadius => explosionRadius;
+
+    [SerializeField] internal float explosionStartDistance = 6f; // Distance from player to start exploding
+    public float ExplosionStartDistance => explosionStartDistance;
+
+    [SerializeField] internal float explosionDamage = 15f; // Damage dealt by explosion
+    public float ExplosionDamage => explosionDamage;
+
+    [SerializeField] internal float movementSpeedIncrease = 3f; // Increase in movement speed during explosion
+    public float MovementSpeedIncrease => movementSpeedIncrease;
+
+    [SerializeField] internal Color flashColor = new Color(1, 0, 0, 1); // Color of flash during explosion
+    public Color FlashColor => flashColor;
+
+    [SerializeField] internal float flashDuration = 0.2f; // Duration of flash during explosion
+    public float FlashDuration => flashDuration;
+
+    [SerializeField] internal float explosionDuration = 4f; // Duration of explosion
+    public float ExplosionDuration => explosionDuration;
+
+    [SerializeField] internal float spiralRadiusIncreaseRate = 0.1f; // Rate of increase in spiral radius during explosion
+    public float SpiralRadiusIncreaseRate => spiralRadiusIncreaseRate;
 }

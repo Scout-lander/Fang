@@ -205,7 +205,7 @@ MonoBehaviour:
   - {x: 0.036577463, y: -0.12104082, z: 0}
   m_ShapePathHash: -42069059
   m_Mesh: {fileID: 0}
-  m_InstanceId: 125842
+  m_InstanceId: 66186
   m_LocalBounds:
     m_Center: {x: -0.034962654, y: 0.06945813, z: 0}
     m_Extent: {x: 0.07154012, y: 0.36414516, z: 0}
@@ -253,9 +253,13 @@ MonoBehaviour:
   CollisionEnemy: 0
   ShootingEnemy: 0
   SummonerEnemy: 1
-  cooldownDuration: 4
   summoningEffect: {fileID: 108142839588649679, guid: ccedbd443abc5e84a9384d54b4765806, type: 3}
   SplittingEnemy: 0
+  splittingEffect: {fileID: 0}
+  DashEnemy: 0
+  ExplodingEnemy: 0
+  explodingEffect: {fileID: 0}
+  BallEnemy: 0
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   damageFlashDuration: 0.2
   deathFadeTime: 0.6
@@ -270,6 +274,10 @@ PrefabInstance:
     - target: {fileID: 1517840137612491965, guid: ccedbd443abc5e84a9384d54b4765806, type: 3}
       propertyPath: m_Name
       value: summonEnemy VFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1517840137612491965, guid: ccedbd443abc5e84a9384d54b4765806, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7489540782623968982, guid: ccedbd443abc5e84a9384d54b4765806, type: 3}
       propertyPath: m_LocalPosition.x

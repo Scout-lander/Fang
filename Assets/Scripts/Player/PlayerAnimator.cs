@@ -7,8 +7,6 @@ public class PlayerAnimator : MonoBehaviour
     //References
     Animator am;
     PlayerMovement pm;
-    private UnityEngine.Animation anim;
-    PlayerStats player;
     SpriteRenderer sr;
 
     void Start()
@@ -16,8 +14,6 @@ public class PlayerAnimator : MonoBehaviour
         am = GetComponent<Animator>();
         pm = GetComponent<PlayerMovement>();
         sr = GetComponent<SpriteRenderer>();
-        anim = GetComponent<UnityEngine.Animation>();
-
     }
 
     void Update()
@@ -25,13 +21,13 @@ public class PlayerAnimator : MonoBehaviour
         if (pm.moveDir.x != 0 || pm.moveDir.y != 0)
         {
             am.SetBool("Move", true);
+
             SpriteDirectionChecker();
         }
         else
         {
             am.SetBool("Move", false);
         }
-        
     }
 
     void SpriteDirectionChecker()
@@ -45,5 +41,4 @@ public class PlayerAnimator : MonoBehaviour
             sr.flipX = false;
         }
     }
-
 }

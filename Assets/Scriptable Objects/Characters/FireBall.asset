@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0fdc727e51c2a488209e36cfcb8297, type: 3}
   m_Name: FireBall
   m_EditorClassIdentifier: 
-  icon: {fileID: -8915327726919978405, guid: c898221a9edbbc746867a5e21ab86974, type: 3}
+  icon: {fileID: 1720842683, guid: 435fbe1d370b7e548a712ed9e202991e, type: 3}
   name: FireBall
   startingWeapon: {fileID: 11400000, guid: c4d2b36f7db35e44cb77a7c3d630762c, type: 2}
   stats:
@@ -30,8 +30,10 @@ MonoBehaviour:
     growth: 1
     greed: 1
     curse: 1
+    dashDuration: 0.25
     magnet: 2
     revival: 0
-    dashSpeed: 20
-    dashDuration: 0.25
     dashCooldown: 5
+    maxDrunk: 100
+    drunkAutoRegen: 5
+    soberRate: 25
